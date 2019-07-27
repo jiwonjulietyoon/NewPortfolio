@@ -1,5 +1,43 @@
 # jiwonjulietyoon
 
+## Added:
+
+#### Vuetify
+`vue add vuetify`
+
+#### JQuery
+Terminal:
+```
+npm install --save jquery
+npm install --save-dev expose-loader
+``` 
+
+main.js:
+```
+import 'expose-loader?$!expose-loader?jQuery!jquery';
+window.$ = window.jQuery = require("jquery");
+```
+
+.eslintrc.js: (append)
+```
+globals: {
+  "$": true,
+  "jQuery": true
+}
+
+```
+
+various script tags (if necessary)
+```
+import $ from 'jquery';
+```
+
+
+
+
+
+---------------------------
+
 ## Project setup
 ```
 npm install
