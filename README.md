@@ -2,10 +2,14 @@
 
 ## Added:
 
-#### Vuetify
+<br>
+
+### Vuetify
 `vue add vuetify`
 
-#### JQuery
+<br>
+
+### JQuery
 Terminal:
 ```
 npm install --save jquery
@@ -32,10 +36,29 @@ various script tags (if necessary)
 import $ from 'jquery';
 ```
 
+<br>
 
 
+### Flipbook-vue
+Terminal:
+`npm i -S flipbook-vue`
+
+main.js:
+```
+import Vue from 'vue'
+import VuePageTransition from 'vue-page-transition'
+
+Vue.use(VuePageTransition)
+```
+
+<br>
+
+### Vue Page Transition
+npm i --save vue-page-transition
 
 
+<br>
+<br>
 ---------------------------
 
 ## Project setup

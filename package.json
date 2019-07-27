@@ -9,8 +9,10 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "flipbook-vue": "^0.6.1",
     "jquery": "^3.4.1",
     "vue": "^2.6.10",
+    "vue-page-transition": "^0.2.2",
     "vue-router": "^3.0.3",
     "vuetify": "^2.0.0",
     "vuex": "^3.0.1"
