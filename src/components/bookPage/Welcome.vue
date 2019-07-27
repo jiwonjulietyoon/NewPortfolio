@@ -2,9 +2,8 @@
   <section class="bookPage">
     <div class="pageContent">
       <p>Welcome</p>
-      <router-link to="/aboutme">About Me</router-link>
     </div>
-    <NavArrows />
+    <NavArrows :prevActive="false" :nextLabel="next.label" :nextName="next.name"/>
   </section>
 </template>
 
@@ -16,6 +15,14 @@ export default {
   name: 'Welcome',
   components: {
     NavArrows
+  },
+  data() {
+    return {
+      next: {
+        label: "About Me",
+        name: "AboutMe"
+      }
+    }
   }
 }
 </script>

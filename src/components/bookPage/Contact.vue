@@ -1,14 +1,26 @@
 <template>
   <section class="bookPage">
-    Contact
+    <div class="pageContent">
+      <p>Contact</p>
+    </div>
+    <NavArrows :prevLabel="prev" :prevName="prev" :nextActive="false" />
   </section>
 </template>
 
 
 <script>
+import NavArrows from '@/components/NavArrows';
+
 export default {
   name: 'Contact',
-
+  components: {
+    NavArrows
+  },
+  data() {
+    return {
+      prev: "Projects",
+    }
+  }
 }
 </script>
 

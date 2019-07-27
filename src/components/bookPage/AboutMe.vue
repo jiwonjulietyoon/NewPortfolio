@@ -1,15 +1,27 @@
 <template>
   <section class="bookPage">
-    <p>About Me</p>
-    <router-link to="/">Welcome</router-link>
+    <div class="pageContent">
+      <p>About Me</p>
+    </div>
+    <NavArrows :prevLabel="prev" :prevName="prev" :nextLabel="next" :nextName="next"/>
   </section>
 </template>
 
 
 <script>
+import NavArrows from '@/components/NavArrows';
+
 export default {
   name: 'AboutMe',
-
+  components: {
+    NavArrows
+  },
+  data() {
+    return {
+      prev: "Welcome",
+      next: "Skills"
+    }
+  }
 }
 </script>
 

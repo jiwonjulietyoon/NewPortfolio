@@ -1,13 +1,19 @@
 <template>
   <nav>
-    <span id="navPrev" class="navBtn">
-      <div class="navArrowRec"></div>
-      <div class="navArrowTri"></div>
-    </span>
-    <span id="navNext" class="navBtn">
-      <div class="navArrowRec"></div>
-      <div class="navArrowTri"></div>
-    </span>
+    <router-link :to="{name: `${prevName}`}" :class="{navBtnDisabled: !prevActive}">
+      <span id="navPrev" class="navBtn">
+        <div class="navArrowRec"></div>
+        <div class="navArrowTri"></div>
+      </span>
+    </router-link>
+    <span id="navPrevLabel" class="navLabel">{{prevLabel}}</span>
+    <router-link :to="{name: `${nextName}`}" :class="{navBtnDisabled: !nextActive}">
+      <span id="navNext" class="navBtn">
+        <div class="navArrowRec"></div>
+        <div class="navArrowTri"></div>
+      </span>
+    </router-link>
+    <span id="navNextLabel" class="navLabel">{{nextLabel}}</span>
   </nav>
 </template>
 
@@ -15,7 +21,14 @@
 <script>
 export default {
   name: 'NavArrows',
-
+  props: {
+    prevActive: {type: Boolean, default: true},
+    nextActive: {type: Boolean, default: true},
+    prevLabel: {type: String, default: ''},
+    nextLabel: {type: String, default: ''},
+    prevName: {type: String, default: ''},
+    nextName: {type: String, default: ''},
+  }
 }
 </script>
 
@@ -27,6 +40,7 @@ nav {
   height: 50px;
   position: relative;
 }
+.navBtnDisabled {display: none;}
 .navBtn {
   width: 32px;
   height: 32px;
@@ -37,7 +51,6 @@ nav {
   border-radius: 50%;
   &:hover {background-color: $navArrowsHover;}
   &:active {background-color: $bgBlack;}
-  &.disabled {display: none;}
   &#navPrev {
     left: 15px;
   }
@@ -70,5 +83,15 @@ nav {
     border-right: 10px solid white;
     left: 17%;
   }
+}
+
+.navLabel {
+  position: absolute;
+  bottom: 12px;
+  font-family: $fontContent;
+  font-size: 18px;
+  font-weight: bold;
+  &#navPrevLabel {left: 55px;}
+  &#navNextLabel {right: 55px;}
 }
 </style>
