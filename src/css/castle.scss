@@ -1,0 +1,152 @@
+@import "./style.scss";
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * *  //
+// * * * * * * * * * FRAME SECTIONS * * * * * * * * * * * * //
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * *  //
+
+.celestialSection {
+  border: 1px solid hotpink;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 25%;
+  @include mdDown {
+    height: 40%;
+  }
+  @include xsDown {
+    height: 25%;
+  }
+}
+
+.frameSection {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+.frameLeft, .frameRight {
+  border: 1px solid red;
+  width: 25%;
+  @include xsDown {
+    display: none;
+  }
+}
+.frameLeft {
+  left: 0;
+  border-bottom-left-radius: 5px;
+}
+.frameRight {
+  right: 0;
+  border-bottom-right-radius: 5px;
+}
+.frameMiddle {
+  width: 50%;
+  left: 25%;
+  border-bottom: 15px solid rgb(59, 90, 78);
+  @include xsDown {
+    width: 100%;
+    left: 0;
+    border-radius: 0 0 5px 5px;
+  }
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+// * * * * * * * * * CASTLE BUILDING * * * * * * * * * * * * //
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+.frameSection div {position: absolute; bottom: 0;}
+
+$towerBgDk: rgb(148, 155, 158);
+$towerBgMd: rgb(163, 167, 163);
+$towerBgLt: rgb(193, 204, 199);
+
+$towerDecoDker: #b6a377;
+$towerDecoDk: rgb(187, 179, 134);
+$towerDecoMd: rgb(211, 207, 161);
+$towerDecoLt: rgb(221, 214, 173);
+
+$towerTopLt: rgb(90, 104, 109);
+$towerTopDk: rgb(48, 58, 59);
+$flagpole: rgb(48, 58, 59);
+$flagBorder: rgb(226, 100, 0);
+
+$mainBg: rgb(226, 133, 59);
+
+$gateDk: #461f0f;
+$gateLt: #6d2f17;
+
+// * * * * * * * * * CASTLE - TOWERS * * * * * * * * * * * * //
+
+.castleTowerJ, .castleTowerN {
+  width: 10%;
+  height: 30%;
+  background: linear-gradient(to right, $towerDecoLt 50%, $towerDecoMd 50%);
+  .towerMid {
+    width: 130%;
+    height: 10%;
+    bottom: 100%;
+    left: -15%;
+    background: $towerTopLt;
+    .towerMidDeco {
+      bottom: 50% !important;
+      width: calc(100% / 7);
+      height: 110%;
+      background: $towerDecoDker;
+      &.d2 {left: calc(200% / 7);}
+      &.d3 {left: calc(400% / 7);}
+      &.d4 {left: calc(600% / 7);}
+    }
+    .towerMidStrip {
+      width: 100%;
+      height: 50%;
+      background: $towerDecoDker;
+      bottom: 75% !important;
+    }
+  }
+}
+.castleTowerJ {
+  left: 3%;
+  
+}
+.castleTowerN {
+  right: 3%;
+}
+.castleTowerI {
+  width: 11%;
+  height: 45%;
+  background: $towerBgLt;
+  left: 22%;
+}
+.castleTowerO {
+  width: 12%;
+  height: 55%;
+  background: $towerBgLt;
+  right: 18%;
+}
+.castleTowerW {
+  width: 9.5%;
+  height: 60%;
+  background: $towerBgDk;
+  left: 45%;
+}
+
+
+.towerTriRotateOuter {
+  width: calc(100% / 1.4142);
+  padding-top: calc(100% / 1.4142);
+  left: 15.1%;
+  bottom: 85% !important;
+  transform: rotate(-45deg);
+  transform-origin: 70% 60%;
+}
+.towerTriRotateInner {
+  width: 100%; height: 100%;
+  background: linear-gradient(to right bottom, $towerTopLt, $towerTopDk);
+  border-radius: 100% 0% 0% 100% / 0% 0% 100% 100%;
+}
+.windows {
+  width: 20%;
+  height: 3.5%;
+  background-color: $towerBgMd;
+  border-top-left-radius: 40%;
+  border-top-right-radius: 40%;
+}

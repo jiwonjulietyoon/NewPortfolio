@@ -2,7 +2,7 @@
   <div id="homeWrap">
     <div id="bookOutline">
       <div id="bookContainer">
-        <vue-page-transition name="fade-in-right" style="height: 100%">
+        <vue-page-transition name="flip-y" style="height: 100%">
           <router-view />
         </vue-page-transition>
       </div>
@@ -38,6 +38,8 @@ export default {
 }
 #bookOutline {
   width: 95%;
+  min-width: 300px;
+  max-width: 1140px;
   height: 94%;
   margin: 0 auto;
   position: relative;
