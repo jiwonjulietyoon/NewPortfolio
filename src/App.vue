@@ -1,6 +1,6 @@
 <template>
   <v-app>
-
+    <router-view />
   </v-app>
 </template>
 
@@ -19,6 +19,10 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
-
+<style lang="scss">
+@import "./css/reset.css";
+@import "./css/style.scss";
+::-webkit-scrollbar {
+  display: none;
+}
 </style>
