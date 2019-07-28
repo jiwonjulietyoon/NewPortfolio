@@ -1,5 +1,6 @@
 <template>
   <section class="frameSection frameMiddle">
+    <CastleFlags />
     <CastleTowerW />
     <CastleBdBack />
     <CastleTowerI />
@@ -13,6 +14,7 @@
 </template>
 
 <script>
+import CastleFlags from '@/components/bookPage/castle/CastleFlags';
 import CastleTowerJ from '@/components/bookPage/castle/CastleTowerJ';
 import CastleTowerI from '@/components/bookPage/castle/CastleTowerI';
 import CastleTowerW from '@/components/bookPage/castle/CastleTowerW';
@@ -26,6 +28,7 @@ import CastleBdSideR from '@/components/bookPage/castle/CastleBdSideR';
 export default {
   name: "FrameMiddle",
   components: {
+    CastleFlags,
     CastleTowerJ,
     CastleTowerI,
     CastleTowerW,
