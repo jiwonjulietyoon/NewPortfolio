@@ -86,7 +86,7 @@ $skyColorTimeHalf: 15s;
   padding-top: 70%;
   bottom: 0; left: 0;
   @include xsDown {
-    padding-top: 100%;
+    padding-top: 120%;
   }
 }
 </style>
