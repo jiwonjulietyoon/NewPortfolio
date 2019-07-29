@@ -54,8 +54,22 @@ $fontContent: 'Copse', serif;
   height: 100%;
   background: rgb(240, 240, 240);
 }
-.pageContent {
+.pageContainer {
   height: calc(100% - 50px);
   background: #DDDDDD;
   position: relative;
+  overflow-y: auto;
 }
+h2.pageHeader {
+  font-family: $fontCursive;
+  font-size: 3em;
+  padding-top: 50px;
+  padding-left: 5%;
+}
+.pageContent {
+
+}
+
+
+
+

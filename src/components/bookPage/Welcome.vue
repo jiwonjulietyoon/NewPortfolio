@@ -1,6 +1,6 @@
 <template>
   <section class="bookPage">
-    <div class="pageContent">
+    <div class="pageContainer">
       <div class="pictureFrame">
         <div class="skyBg skyNight"></div>
         <div class="skyBg skyDay"></div>
@@ -52,11 +52,12 @@ $skyColorTimeHalf: 15s;
 
 .pictureFrame {
   width: 90%;
-  height: 86%;
+  height: 94%;
   position: absolute;
-  top: 7%;
+  top: 3%;
   left: 5%;
   border-radius: 5px;
+  overflow: hidden;
 }
 .skyBg {
   width: 100%; height: 100%;

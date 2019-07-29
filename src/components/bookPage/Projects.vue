@@ -1,7 +1,7 @@
 <template>
   <section class="bookPage">
-    <div class="pageContent">
-      <p>Project</p>
+    <div class="pageContainer">
+      <h2 class="pageHeader">Projects</h2>
     </div>
     <NavArrows :prevLabel="prev" :prevName="prev" :nextLabel="next" :nextName="next"/>
   </section>
