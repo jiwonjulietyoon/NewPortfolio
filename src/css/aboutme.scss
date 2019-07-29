@@ -329,106 +329,103 @@
 
 
 
-@include maxWidth(600) {
-    .wordBoxOuter {
-        width: 70px; height: 70px;
-    }
-    .wordBox.crown > .rightTriangle {
-        border-bottom-width: 20px;
-        top: 23px;
-    }
-    .wordBox.crown > .rightTriangle.triL {
-        border-right-width: 30px;
-        left: 15px;
-    }
-    .wordBox.crown > .rightTriangle.triR {
-        border-left-width: 30px;
-        right: 15px;
-    }
-    .wordBox.crown > .triCenter {
-        border-left-width: 15px;
-        border-right-width: 15px;
-        border-bottom-width: 23px;
-        top: 16px;
-        left: 16px;
-    }
+// @include maxWidth(600) {
+//     .wordBox.crown > .rightTriangle {
+//         border-bottom-width: 20px;
+//         top: 23px;
+//     }
+//     .wordBox.crown > .rightTriangle.triL {
+//         border-right-width: 30px;
+//         left: 15px;
+//     }
+//     .wordBox.crown > .rightTriangle.triR {
+//         border-left-width: 30px;
+//         right: 15px;
+//     }
+//     .wordBox.crown > .triCenter {
+//         border-left-width: 15px;
+//         border-right-width: 15px;
+//         border-bottom-width: 23px;
+//         top: 16px;
+//         left: 16px;
+//     }
 
-    .wordBox.starwand > .starshape {
-        font-size: 15px;
-        top: 6px;
-        left: 0px;
-    }
-    .wordBox.starwand > .starshape > .wand {
-        height: 30px;
-        width: 3px;
-        top: 15px;
-    }
+//     .wordBox.starwand > .starshape {
+//         font-size: 15px;
+//         top: 6px;
+//         left: 0px;
+//     }
+//     .wordBox.starwand > .starshape > .wand {
+//         height: 30px;
+//         width: 3px;
+//         top: 15px;
+//     }
 
-    .wordBox.heart > .heartshape {
-        width: 70px;
-        height: 60px;
-        top: 8px;
-        left: 15px;
-    }
+//     .wordBox.heart > .heartshape {
+//         width: 70px;
+//         height: 60px;
+//         top: 8px;
+//         left: 15px;
+//     }
 
-    .wordBox.heart > .heartshape:before,
-    .wordBox.heart > .heartshape:after {
-        width: 20px;
-        height: 35px;
-        left: 18px;
-    }
-    .wordBox.heart > .heartshape:after {
-        left: -2px;
-    }
+//     .wordBox.heart > .heartshape:before,
+//     .wordBox.heart > .heartshape:after {
+//         width: 20px;
+//         height: 35px;
+//         left: 18px;
+//     }
+//     .wordBox.heart > .heartshape:after {
+//         left: -2px;
+//     }
 
-    .wordBox.diamond > .cut-diamond {
-        border-width: 0 10px 10px 10px;
-        width: 20px;
-        top: 8px;
-        left: 11px;
-    }
-    .wordBox.diamond > .cut-diamond:after {
-        border-width: 25px 20px 0 20px;
-        top: 10px;
-        left: -10px;
-    }
+//     .wordBox.diamond > .cut-diamond {
+//         border-width: 0 10px 10px 10px;
+//         width: 20px;
+//         top: 8px;
+//         left: 11px;
+//     }
+//     .wordBox.diamond > .cut-diamond:after {
+//         border-width: 25px 20px 0 20px;
+//         top: 10px;
+//         left: -10px;
+//     }
 
-    .wordBox.sword > .pentagon {
-        width: 7px;
-        border-width: 25px 4px 0;
-        left: 23px;
-        top: 8px;
-    }
-    .wordBox.sword > .pentagon:before {
-        border-width: 0 7px 5px;
-        top: -30px;
-        left: -4px;
-    }
-    .wordBox.sword > .pentagon > .recHor {
-        width: 26px;
-        top: -1px;
-    }
-    .wordBox.sword > .pentagon > .recVer {
-        width: 5px;
-        height: 12px;
-    }
-    .wordBox.sword > .pentagon > .recVer:after {
-        width: 9px;
-        height: 4px;
-        left: -50%;
-    }
+//     .wordBox.sword > .pentagon {
+//         width: 7px;
+//         border-width: 25px 4px 0;
+//         left: 23px;
+//         top: 8px;
+//     }
+//     .wordBox.sword > .pentagon:before {
+//         border-width: 0 7px 5px;
+//         top: -30px;
+//         left: -4px;
+//     }
+//     .wordBox.sword > .pentagon > .recHor {
+//         width: 26px;
+//         top: -1px;
+//     }
+//     .wordBox.sword > .pentagon > .recVer {
+//         width: 5px;
+//         height: 12px;
+//     }
+//     .wordBox.sword > .pentagon > .recVer:after {
+//         width: 9px;
+//         height: 4px;
+//         left: -50%;
+//     }
 
-    .wordBox.banner > .flag {
-        width: 22px;
-        height: 25px;
-        top: 7px;
-    }
+//     .wordBox.banner > .flag {
+//         width: 22px;
+//         height: 25px;
+//         top: 7px;
+//     }
 
-    .wordBox.scroll > .cylinder {
-        top: 15%;
-    }
+//     .wordBox.scroll > .cylinder {
+//         top: 15%;
+//     }
 
-}
+// }
 
 
 

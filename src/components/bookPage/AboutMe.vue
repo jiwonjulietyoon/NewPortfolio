@@ -4,22 +4,26 @@
       <h2 class="pageHeader">About Me</h2>
       <div class="pageContent">
         <div class="leftPage">
-          <v-layout row wrap justify-left>
-            <v-flex 
-              v-for="text in allText" 
-              :key="text.preview"
-              md4
-              lg3
-            >
-              <div 
-                class="wordBoxOuter" 
-                v-html="text.html" 
-                :class="{wordBoxSelected: text.current}"
-                @click="setCurrent(text)"
+          <v-container>
+            <v-layout row wrap justify-left>
+              <v-flex 
+                v-for="text in allText" 
+                :key="text.preview"
+                xs4
+                sm3
+                md4
+                lg3
               >
-              </div>
-            </v-flex>
-          </v-layout>
+                <div 
+                  class="wordBoxOuter" 
+                  v-html="text.html" 
+                  :class="{wordBoxSelected: text.current}"
+                  @click="setCurrent(text)"
+                >
+                </div>
+              </v-flex>
+            </v-layout>
+          </v-container>
 
         </div>
         <div class="rightPage">
@@ -133,8 +137,8 @@ export default {
   cursor: pointer;
   transition: all 0.3s;
   @include maxWidth(600) {
-    width: 70px;
-    height: 70px;
+    width: 85px;
+    height: 85px;
   }
 }
 </style>
