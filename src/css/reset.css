@@ -12,12 +12,15 @@ menu, nav, section, summary {
 	padding: 0;
 	box-sizing: border-box;
 }
+div::before, div::after, span::before, span::after {
+    content: "";
+}
 a, a:hover {
 	color: initial;
 	text-decoration: none;
 }
-div::before, div::after, span::before, span::after {
-    content: "";
+button:focus {
+	outline: none;
 }
 ol, ul {
     list-style: none;

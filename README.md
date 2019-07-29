@@ -54,8 +54,15 @@ Vue.use(VuePageTransition)
 <br>
 
 ### Vue Page Transition
-npm i --save vue-page-transition
+Terminal: 
+`npm i --save vue-page-transition`
 
+main.js:
+```import VuePageTransition from 'vue-page-transition';
+
+Vue.use(VuePageTransition);
+
+```
 
 <br>
 <br>

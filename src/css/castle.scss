@@ -81,14 +81,14 @@ $gateLt: #6d2f17;
 }
 
 .pole {
-  width: 0.7%;
-  height: 20%;
+  width: 0.8%;
+  height: 12%;
   background: $flagpole;
   border-radius: 2px;
   &.p1 {bottom: 30% !important; left: 9.5%;}
-  &.p2 {bottom: 56% !important; left: 26%;}
-  &.p3 {bottom: 68% !important; left: 47%;}
-  &.p4 {bottom: 65% !important; left: 73.7%;}
+  &.p2 {bottom: 53% !important; left: 27%;}
+  &.p3 {bottom: 66% !important; left: 49.3%;}
+  &.p4 {bottom: 64% !important; left: 73.7%;}
   &.p5 {bottom: 30% !important; right: 9.5%;}
 }
 .bannerOuter {
@@ -107,28 +107,36 @@ $gateLt: #6d2f17;
     transform: skew(15deg);
     border: 4px solid $flagBorder;
     border-right: none;
+    .letter {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      color: $towerTopDk;
+      font-family: $fontFancy;
+      text-align: center;
+      top: 40%; left: 60%;
+      transform: translate(-50%, -50%) skew(-15deg);
+      @include mdDown {font-size: 0.9em;}
+      @include smDown {font-size: 0.75em;}
+      @include xsDown {font-size: 1.2em;}
+    }
   }
   &.b4 > .bannerDeco, &.b5 > .bannerDeco {
     transform: skew(-15deg);
     left: 25%;
     border: 4px solid $flagBorder;
     border-left: none;
+    .letter {left: -10%;}
   }
-  .letter {
-    width: 85%;
-    color: $towerTopDk;
-    font-family: $fontFancy;
-    text-align: center;
-    top: 45%; left: 15%;
-    transform: translateY(-50%) skew(-15deg);
-  }
+  
   &.b4 .letter, &.b5 .letter {left: 5%; transform: translateY(-50%) skew(15deg);}
+  &.b1 {bottom: 36%; left: 3%;}
+  &.b2 {bottom: 59%; left: 20.5%;}
+  &.b3 {bottom: 72%; left: 42.5%;}
+  &.b4 {bottom: 70%; left: 74.4%;}
+  &.b5 {bottom: 36%; right: 3%;}
 }
-.b1 {bottom: 49%; left: 2.5%;}
-.b2 {bottom: 75%; left: 19.2%;}
-.b3 {bottom: 87%; left: 40.3%;}
-.b4 {bottom: 84%; left: 74.4%;}
-.b5 {bottom: 49%; right: 2.5%;}
+
 
 
 

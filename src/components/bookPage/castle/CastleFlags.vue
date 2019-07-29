@@ -8,31 +8,31 @@
     <div class="bannerOuter b1">
       <div class="banner"></div>
       <div class="bannerDeco">
-        <span class="letter">J</span>
+        <div class="letter">J</div>
       </div>
     </div>
     <div class="bannerOuter b2">
       <div class="banner"></div>
       <div class="bannerDeco">
-        <span class="letter">I</span>
+        <div class="letter">I</div>
       </div>
     </div>
     <div class="bannerOuter b3">
       <div class="banner"></div>
       <div class="bannerDeco">
-        <span class="letter">W</span>
+        <div class="letter">W</div>
       </div>
     </div>
     <div class="bannerOuter b4">
       <div class="banner"></div>
       <div class="bannerDeco">
-        <span class="letter">O</span>
+        <div class="letter">O</div>
       </div>
     </div>
-    <div class="bannerOuter banner5">
+    <div class="bannerOuter b5">
       <div class="banner"></div>
       <div class="bannerDeco">
-        <span class="letter">N</span>
+        <div class="letter">N</div>
       </div>
     </div>
   </div>
