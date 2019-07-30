@@ -27,7 +27,7 @@
 
         </div>
         <div class="rightPage">
-          <h3 class="aboutmeWord"><span v-for="letter in currWord">{{letter}}</span></h3>
+          <h3 class="aboutmeWord"><span v-for="letter in currWord" :key="letter.index">{{letter}}</span></h3>
           <p class="aboutmeBlurb">{{currBlurb}}</p>
         </div>
       </div>
@@ -140,6 +140,24 @@ export default {
     width: 85px;
     height: 85px;
   }
+}
+h3.aboutmeWord {
+    padding: 0;
+    font-family: $fontContent;
+    font-size: 1.8em;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+h3.aboutmeWord span:first-child {
+    font-family: $fontFancy;
+    font-size: 2.2em;
+    font-weight: normal;
+    margin: 0 8px;
+}
+p.aboutmeBlurb {
+    padding: 0 3%;
+    font-family: $fontContent;
+    line-height: 2.5;
 }
 </style>
 

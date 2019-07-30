@@ -74,7 +74,7 @@ nav {
   width: 0;
   height: 0;
   top: 7.25px;
-  left: 52%;
+  left: 51%;
   border-top: 9px solid transparent;
   border-left: 10px solid white;
   border-bottom: 9px solid transparent;
