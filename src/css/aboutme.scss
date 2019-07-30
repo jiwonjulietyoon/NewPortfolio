@@ -1,5 +1,6 @@
 @import './style.scss';
 
+
 .wordBox {
   position: absolute;
   width: 100%;
@@ -16,7 +17,7 @@
 .wordBoxSelected {
   .wordBox {
     background: white;
-    border-color: goldenrod;
+    border-color: $yellowBorder;
   }
   &.wordBoxOuter {
     cursor: initial;
@@ -38,7 +39,7 @@
   & > .rightTriangle {
     width: 0;
     height: 0;
-    border-bottom: 35px solid gold;
+    border-bottom: 35px solid $yellowMd;
     top: 38px;
     @include maxWidth(600) {
       border-bottom-width: 30px;
@@ -76,7 +77,7 @@
     height: 0;
     border-left: 22px solid transparent;
     border-right: 22px solid transparent;
-    border-bottom: 40px solid gold;
+    border-bottom: 40px solid $yellowMd;
     top: 28px;
     left: 24px;
     @include maxWidth(600) {
@@ -94,7 +95,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: rgb(228, 183, 34);
+    background-color: $yellowDk;
     top: -12px;
   }
 }
@@ -109,7 +110,7 @@
     display: inline-block;
     width: 0; height: 0;
     margin-left: .9em; margin-right: .9em; margin-bottom: 1.2em;
-    border-right: .3em solid transparent; border-bottom: .7em solid gold; border-left: .3em solid transparent;
+    border-right: .3em solid transparent; border-bottom: .7em solid $yellowMd; border-left: .3em solid transparent;
     font-size: 22px;
     top: 22px;
     left: 2px;
@@ -124,7 +125,7 @@
       width: 0; height: 0;
       position: absolute;
       top: .6em; left: -1em;
-      border-right: 1em solid transparent; border-bottom: .7em solid gold; border-left: 1em solid transparent;
+      border-right: 1em solid transparent; border-bottom: .7em solid $yellowMd; border-left: 1em solid transparent;
       -webkit-transform: rotate(-35deg); transform: rotate(-35deg);
     }
     &::after {
@@ -133,7 +134,7 @@
     & > .wand {
       height: 50px;
       width: 4px;
-      background-color: rgb(228, 183, 34);
+      background-color: $yellowDk;
       top: 20px;
       left: -2px;
       @include maxWidth(600) {
@@ -165,7 +166,7 @@
       top: 0;
       width: 30px;
       height: 50px;
-      background: gold;
+      background: $yellowMd;
       border-radius: 30px 30px 0 0;
       transform: rotate(-45deg);
       transform-origin: 0 100%;
@@ -177,7 +178,7 @@
       transform-origin: 100% 100%;
       border-width: 0 5px 0 0;
       border-style: solid;
-      border-color: rgb(228, 183, 34);
+      border-color: $yellowDk;
     }
   }
 }
@@ -190,7 +191,7 @@
 .wordBox.diamond {
   & > .cut-diamond {
     border-style: solid;
-    border-color: transparent transparent gold transparent;
+    border-color: transparent transparent $yellowMd transparent;
     border-width: 0 15px 15px 15px;
     height: 0;
     width: 35px;
@@ -210,7 +211,7 @@
       width: 0;
       height: 0;
       border-style: solid;
-      border-color: rgb(228, 183, 34) transparent transparent transparent;
+      border-color: $yellowDk transparent transparent transparent;
       border-width: 40px 33px 0 33px;
       @include maxWidth(600) {
         border-width: 33px 26px 0 26px;
@@ -237,7 +238,7 @@
     box-sizing: content-box;
     border-width: 40px 6px 0;
     border-style: solid;
-    border-color: gold transparent;
+    border-color: $yellowMd transparent;
     @include maxWidth(600) {
       width: 9px;
       border-width: 30px 5px 0;
@@ -252,7 +253,7 @@
       left: -6px;
       border-width: 0 11px 7px;
       border-style: solid;
-      border-color: transparent transparent gold;
+      border-color: transparent transparent $yellowMd;
       @include maxWidth(600) {
         border-width: 0 10px 6px;
         top: -36px;
@@ -263,7 +264,7 @@
       width: 30px;
       height: 3px;
       left: -10px;
-      background-color: rgb(228, 183, 34);
+      background-color: $yellowDk;
       border-radius: 2px;
       @include maxWidth(600) {
         width: 28px;
@@ -274,7 +275,7 @@
         position: absolute;
         width: 6px; height: 6px;
         border-radius: 50%;
-        background-color: rgb(228, 183, 34);
+        background-color: $yellowDk;
         top: -1.5px;
       }
       &::before {left: -2px;}
@@ -283,7 +284,7 @@
     & > .recVer {
       width: 8px;
       height: 15px;
-      background-color: rgb(228, 183, 34);
+      background-color: $yellowDk;
       left: 1px;
       @include maxWidth(600) {
         width: 7px;
@@ -294,7 +295,7 @@
         width: 14px;
         height: 6px;
         position: absolute;
-        background-color: rgb(228, 183, 34);
+        background-color: $yellowDk;
         border-radius: 4px;
         top: 80%;
         left: -37%;
@@ -317,16 +318,21 @@
   & > .flag {
     width: 36px;
     height: 47px;
-    background-color: gold;
+    background-color: $yellowMd;
     top: 20px;
     left: 50%;
     transform: translate(-50%);
+    @include maxWidth(600) {
+      width: 30px;
+      height: 38px;
+      top: 16px;
+    }
     &::before, &::after {
       position: absolute;
       width: 0;
       height: 0;
       top: 100%;
-      border-top: 10px solid gold;
+      border-top: 10px solid $yellowMd;
     }
     &::before {
       border-right: 18px solid transparent;
@@ -338,13 +344,13 @@
     & > .flaghanger {
       width: 160%;
       height: 3px;
-      background-color: rgb(228, 183, 34);
+      background-color: $yellowDk;
       left: -30%;
       &::before, &::after {
         position: absolute;
         width: 6px; height: 6px;
         border-radius: 50%;
-        background-color: rgb(228, 183, 34);
+        background-color: $yellowDk;
         top: -1.5px;
       }
       &::before {left: -2px;}
@@ -368,24 +374,24 @@
     top: 27%;
     left: 50%;
     transform: translate(-50%);
-    background: gold;
+    background: $yellowMd;
     &::after {
       width: 100%;
       height: 25%;
       border-radius: 100%;
-      background: rgb(228, 183, 34);
+      background: $yellowDk;
       position: absolute;
       top: -10%;
     }
     & > .strap {
       width: 100%;
       height: 10%;
-      background: rgb(228, 183, 34);
+      background: $yellowDk;
       top: 40%;
       &::after {
         width: 80%;
         height: 120%;
-        background: rgb(228, 183, 34);
+        background: $yellowDk;
         position: absolute;
         top: 140%;
         right: 100%;
@@ -422,41 +428,6 @@
 //         left: -2px;
 //     }
 
-
-//     .wordBox.sword > .pentagon {
-//         width: 7px;
-//         border-width: 25px 4px 0;
-//         left: 23px;
-//         top: 8px;
-//     }
-//     .wordBox.sword > .pentagon:before {
-//         border-width: 0 7px 5px;
-//         top: -30px;
-//         left: -4px;
-//     }
-//     .wordBox.sword > .pentagon > .recHor {
-//         width: 26px;
-//         top: -1px;
-//     }
-//     .wordBox.sword > .pentagon > .recVer {
-//         width: 5px;
-//         height: 12px;
-//     }
-//     .wordBox.sword > .pentagon > .recVer:after {
-//         width: 9px;
-//         height: 4px;
-//         left: -50%;
-//     }
-
-//     .wordBox.banner > .flag {
-//         width: 22px;
-//         height: 25px;
-//         top: 7px;
-//     }
-
-//     .wordBox.scroll > .cylinder {
-//         top: 15%;
-//     }
 
 // }
 

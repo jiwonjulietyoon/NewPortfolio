@@ -9,6 +9,10 @@ $fontCursive: 'Homemade Apple', cursive;
 $fontFancy: 'Berkshire Swash', cursive;
 $fontContent: 'Copse', serif;
 
+$yellowBorder: goldenrod;
+$yellowMd: gold;
+$yellowDk: rgb(228, 183, 34);
+
 // * * * * * * * * * GENERAL * * * * * * * * * * * * //
 
 @mixin minWidth($screen) {
