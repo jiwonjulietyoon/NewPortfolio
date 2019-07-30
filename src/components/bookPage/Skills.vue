@@ -230,21 +230,27 @@ export default {
       &:nth-of-type(4) {right: 0px;}
     }
   }
-}
-
-
-.skillSideBannerMain > .hornLeft {
-    width: 0;
-    height: 0;
-    border-top: 25px solid transparent;
-    border-left: 40px solid gold;
-    border-bottom: 25px solid transparent;
+  & > .text {
     position: absolute;
-    top: -15px;
-    left: -50px;
+    width: 100%;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    top: 30px; left: 0;
+    font-family: $fontFancy;
+    font-size: 1.5em;
+  }
 }
-.skillSideBannerMain > .hornLeft:after {
-    content: "";
+.hornLeft {
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-left: 40px solid gold;
+  border-bottom: 25px solid transparent;
+  position: absolute;
+  top: -15px;
+  left: -50px;
+  &::after {
     position: absolute;
     width: 7px;
     height: 56px;
@@ -252,29 +258,26 @@ export default {
     border-radius: 3px;
     left: -47px;
     top: -27px;
+  }
 }
 
-
-.skillRightOuter {
-    width: 120px;
-    height: 120px;
-    position: absolute;
-    top: 100px;
-    right: 10%;
+.right {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 100px;
+  right: 10%;
 }
-
-.skillSideBannerMain > .hornRight {
-    width: 0;
-    height: 0;
-    border-top: 25px solid transparent;
-    border-right: 40px solid gold;
-    border-bottom: 25px solid transparent;
-    position: absolute;
-    top: -15px;
-    right: -50px;
-}
-.skillSideBannerMain > .hornRight:after {
-    content: "";
+.hornRight {
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-right: 40px solid gold;
+  border-bottom: 25px solid transparent;
+  position: absolute;
+  top: -15px;
+  right: -50px;
+  &::after {
     position: absolute;
     width: 7px;
     height: 56px;
@@ -282,20 +285,9 @@ export default {
     border-radius: 3px;
     right: -47px;
     top: -27px;
+  }
 }
 
-
-.skillSideBannerMain > .sideBannerText {
-    position: absolute;
-    width: 100%;
-    height: 90px;
-    line-height: 90px;
-    text-align: center;
-    top: 30px; left: 0;
-    /* border: 1px solid #EEEEEE; */
-    font-family: 'Berkshire Swash', cursive;
-    font-size: 1.5em;
-}
 
 
 
