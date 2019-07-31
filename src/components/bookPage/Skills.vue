@@ -96,25 +96,25 @@ export default {
   height: 250px;
   margin: 0 auto 30px;
   position: relative;
+  @include xsDown {height: 600px;}
+  div {position: absolute;}
 }
 .center {
-  position: absolute;
   left: 50%;
   top: 40px;
   transform: translate(-50%);
   width: 150px;
   height: 150px;
   & > .main {
-    position: absolute;
     width: 100%;
     height: 100%;
-    background: #DCDCC6;
+    background: $bannerMd;
     &::before, &::after {
       position: absolute;
       width: 0;
       height: 0;
       top: 100%;
-      border-top: 50px solid #DCDCC6;
+      border-top: 50px solid $bannerMd;
     }
     &::before {
       border-right: 75px solid transparent;
@@ -126,15 +126,14 @@ export default {
     & > .rod {
       width: 230px;
       height: 10px;
-      background-color: #003694;
-      position: absolute;
+      background-color: $bannerRodDk;
       top: -25px;
       left: -40px;
       &::before, &::after {
         position: absolute;
         width: 10px;
         height: 18px;
-        background: #003694;
+        background: $bannerRodDk;
         top: -4px;
         border-radius: 2px;
       }
@@ -143,25 +142,22 @@ export default {
       & > .deco {
         width: 20px; height: 20px;
         border-radius: 50%;
-        background: #003694;
-        position: absolute;
+        background: $bannerRodDk;
         top: -5px;
         &:first-child {left: -27px;}
         &:last-child {right: -27px;}
       }
     }
     & > .top {
-      position: absolute;
       width: 30px;
       height: 30px;
-      background-color: #DCDCC6;
+      background-color: $bannerMd;
       bottom: 100%;
       &:nth-of-type(2) {left: 40px;}
       &:nth-of-type(3) {right: 40px;}
       &:nth-of-type(4) {right: 0;}
     }
     & > .text {
-      position: absolute;
       width: 100%; height: 100%;
       line-height: 150px;
       text-align: center;
@@ -171,21 +167,21 @@ export default {
   }
 }
 
-
-
-
 .left {
   width: 120px;
   height: 120px;
-  position: absolute;
   top: 100px;
   left: 10%;
+  @include xsDown {
+    left: 50%;
+    top: 280px;
+    transform: translate(-50%);
+  }
 }
 .sideMain {
-  position: absolute;
   width: 100%;
   height: 100%;
-  background: beige;
+  background: $bannerLt;
   &::after {
     position: absolute;
     top: 100%;
@@ -193,20 +189,19 @@ export default {
     height: 0;
     border-left: 60px solid transparent;
     border-right: 60px solid transparent;
-    border-top: 20px solid beige;
+    border-top: 20px solid $bannerLt;
   }
   & > .rod {
     width: 160px;
     height: 10px;
-    background: gold;
-    position: absolute;
+    background: $yellowMd;
     top: 5px;
     left: -20px;
     &::before, &::after {
       position: absolute;
       width: 10px;
       height: 16px;
-      background: gold;
+      background: $yellowMd;
       border-radius: 5px;
       top: -3px;
     }
@@ -216,13 +211,11 @@ export default {
   & > .top {
     width: 100%;
     height: 20px;
-    background: #004ac9;
-    position: absolute;
+    background: $bannerRodMd;
     & > div {
       width: 26px;
       height: 10px;
-      background: #004ac9;
-      position: absolute;
+      background: $bannerRodMd;
       top: 100%;
       border-radius: 0 0 3px 3px;
       &:nth-of-type(2) {left: 31px;}
@@ -231,7 +224,6 @@ export default {
     }
   }
   & > .text {
-    position: absolute;
     width: 100%;
     height: 90px;
     line-height: 90px;
@@ -245,16 +237,15 @@ export default {
   width: 0;
   height: 0;
   border-top: 25px solid transparent;
-  border-left: 40px solid gold;
+  border-left: 40px solid $yellowMd;
   border-bottom: 25px solid transparent;
-  position: absolute;
   top: -15px;
   left: -50px;
   &::after {
     position: absolute;
     width: 7px;
     height: 56px;
-    background: rgb(221, 188, 0);
+    background: $yellowDk;
     border-radius: 3px;
     left: -47px;
     top: -27px;
@@ -264,79 +255,48 @@ export default {
 .right {
   width: 120px;
   height: 120px;
-  position: absolute;
   top: 100px;
   right: 10%;
+  @include xsDown {
+    right: initial;
+    left: 50%;
+    top: 460px;
+    transform: translate(-50%);
+  }
 }
 .hornRight {
   width: 0;
   height: 0;
   border-top: 25px solid transparent;
-  border-right: 40px solid gold;
+  border-right: 40px solid $yellowMd;
   border-bottom: 25px solid transparent;
-  position: absolute;
   top: -15px;
   right: -50px;
   &::after {
     position: absolute;
     width: 7px;
     height: 56px;
-    background: rgb(221, 188, 0);
+    background: $yellowDk;
     border-radius: 3px;
     right: -47px;
     top: -27px;
   }
 }
 
-
-
-
-
-
-@media screen and (max-width: 575px) {
-    .skillsRanked {
-        height: 600px;
-    }
-    .skillCenterOuter {
-        top: 40px;
-    }
-    .skillLeftOuter {
-        left: 50%;
-        top: 280px;
-        transform: translate(-50%);
-    }
-    
-    .skillRightOuter {
-        right: initial;
-        left: 50%;
-        top: 460px;
-        transform: translate(-50%);
-    }
-}
-
-
-
-
 /* * * * * * * * * * * * * * * * * * * * * * * * * */
 
-.skillsOthers {
-    width: 80%;
-    height: 140px;
-    margin: 20px auto;
-}
-@media screen and (max-width: 575px) {
-    .skillsOthers {
-        width: 90%;
-    }
-}
-.skillsOthers > div {
-    float: left;
-}
-
-.skillScrollMain {
+.others {
+  width: 80%;
+  height: 140px;
+  margin: 20px auto;
+  @include xsDown {
+    width: 90%;
+  }
+  & > div {float: left;}
+  & > .main {
     width: calc(100% - 60px);
     height: 100px;
-    background-color: beige;
+    background-color: $bannerLt;
     padding: 10px 20px;
     position: relative;
     top: 10px;
@@ -344,38 +304,38 @@ export default {
     font-size: 1.3em;
     letter-spacing: 1px;
     font-style: italic;
-}
-
-.skillScrollRoll {
+  }
+  & > .roll {
     width: 30px;
     height: 120px;
-    background-color: #DCDCC6;
+    background-color: $bannerMd;
     position: relative;
     border-radius: 2px;
+    & > .top, & > .bot {
+      position: absolute;
+      width: 20px;
+      height: 7px;
+      background-color: $bannerDk;
+      left: 5px;
+    }
+    & > .top, & > .top::after {
+      bottom: 100%;
+      border-radius: 2px 2px 0 0;
+    }
+    & > .bot, & > .bot::after {
+      top: 100%;
+      border-radius: 0 0 2px 2px;
+    }
+    & > .top::after, & > .bot::after {
+      position: absolute;
+      width: 30%;
+      height: 100%;
+      background-color: $bannerDker;
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
 }
-.skillScrollRoll > .rollTop, .skillScrollRoll > .rollBot {
-    position: absolute;
-    width: 20px;
-    height: 7px;
-    background-color: #C4C4B0;
-    left: 5px;
-}
-.skillScrollRoll > .rollTop, .skillScrollRoll > .rollTop:after {
-    bottom: 100%;
-    border-radius: 2px 2px 0 0;
-}
-.skillScrollRoll > .rollBot, .skillScrollRoll > .rollBot:after{
-    top: 100%;
-    border-radius: 0 0 2px 2px;
-}
-.skillScrollRoll > .rollTop:after, .skillScrollRoll > .rollBot:after {
-    content: "";
-    position: absolute;
-    width: 30%;
-    height: 100%;
-    background-color: #ABAB9A;
-    left: 50%;
-    transform: translate(-50%);
-}
+
 
 </style>
