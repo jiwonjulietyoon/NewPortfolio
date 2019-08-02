@@ -64,11 +64,11 @@ $bannerDker: #ABAB9A;
 // * * * * * * * * * BOOK PAGE * * * * * * * * * * * * //
 .bookPage {
   height: 100%;
-  background: rgb(240, 240, 240);
+  // background: rgb(240, 240, 240);
 }
 .pageContainer {
   height: calc(100% - 50px);
-  background: #DDDDDD;
+  // background: #DDDDDD;
   position: relative;
   overflow-y: auto;
 }
@@ -87,5 +87,26 @@ h2.pageHeader {
 }
 
 
+// * * * * * * * * * BUTTONS * * * * * * * * * * * * //
+
+@mixin btnBase {
+  display: inline-block;
+  cursor: pointer;
+  &:focus {outline: none;}
+}
+@mixin btnSlide($color) {
+  @include btnBase;
+  color: $color;
+  border: 1.5px solid $color;
+  padding: 5px 10px;
+  background: linear-gradient(to right, $color 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right;
+  transition: all 0.3s;
+  &:hover {
+    background-position: left;
+    color: initial;
+  }
+}
 
 
