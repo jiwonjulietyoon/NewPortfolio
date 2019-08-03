@@ -129,9 +129,10 @@ export default {
       align-items: baseline;
       padding-top: 7px;
       .btn {
-        @include btnSlide(white);
         font-size: 0.8em;
         font-family: $fontContent;
+        &:first-child {@include btnSlideRight(white);}
+        &:last-child {@include btnSlideLeft(white);}
       }
     }
   }
