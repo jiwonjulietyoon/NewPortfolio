@@ -1,0 +1,149 @@
+@import "@/css/style.scss";
+
+$skyColorTime: 30s;
+$skyColorTimeHalf: 15s;
+
+
+.celestialSection {
+  border: 1px solid hotpink;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+//////////// CLOUDS ////////////////
+
+@keyframes cloudOpacity {
+  0% {opacity: 1;}
+  40% {opacity: 1;}
+  60% {opacity: 0.05;}
+  100% {opacity: 0.05;}
+}
+@keyframes cloudMove {
+  0% {transform: translate(-100%);}
+  100% {transform: translate(100%);}
+}
+@mixin cloudMarquee($time, $delay) {
+  animation: cloudMove $time linear infinite;
+  animation-delay: $delay;
+}
+
+.cloudRow {
+  width: 100%;
+  height: 80px;
+  @include smDown {height: 70px;}
+  position: absolute;
+  left: 0;
+  &.c1 {top: 2%;}
+  &.c2 {top: 5%;}
+  &.c3 {top: 10%; 
+    @include smDown {opacity: 0;}
+  }
+  &.c4 {top: 17%;}
+  & > .row {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    & > .r1, .r2 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0; left: 0;
+    }
+    & > .r1 {
+      @include cloudMarquee(100s, -50s);
+    }
+    & > .r2 {
+      @include cloudMarquee(100s, 0);
+    }
+  }
+}
+@mixin cloudShape($cloudSize) {
+  width: $cloudSize;
+  height: $cloudSize * 0.4;
+  border-radius: $cloudSize * 0.4;
+  background: radial-gradient(ellipse at top, white 50%, rgb(220, 236, 250));
+  position: relative;
+  top: $cloudSize * 0.35;
+  &::before, &::after {
+    border-radius: 50%;
+    background: radial-gradient(ellipse at bottom, white 70%, rgb(220, 236, 250));
+    position: absolute;
+  }
+  &::before {
+    width: $cloudSize * 0.3;
+    height: $cloudSize * 0.3;
+    bottom: 60%;
+    left: 15%;
+  }
+  &::after {
+    width: $cloudSize * 0.5;
+    height: $cloudSize * 0.5;
+    bottom: 45%;
+    right: 15%;
+  }
+}
+.cloud {
+  @include cloudShape(90px);
+  @include mdDown {
+    @include cloudShape(80px);
+  }
+  @include smDown {
+    @include cloudShape(70px);
+  }
+  animation: cloudOpacity $skyColorTimeHalf linear infinite alternate;
+  .c1 & {left: 50%;}
+  .c2 & {left: 90%;}
+  .c3 & {left: 40%;}
+  .c4 & {left: 10%;}
+}
+
+
+
+//////////// SUN ////////////////
+
+@mixin sunShape($size) {
+  width: $size;
+  height: $size;
+}
+.sunOuter {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 100%; left: 0;
+  animation: sunRiseY $skyColorTime ease-out  $skyColorTime * -0.3 infinite;
+}
+.sun {
+  @include sunShape(70px);
+  @include mdDown {
+    @include sunShape(60px);
+  }
+  @include smDown {
+    @include sunShape(50px);
+  }
+  border-radius: 50%;
+  background: radial-gradient(circle, #fffc00 0%, #F2C94C 100%);
+  position: absolute;
+  top: 0; right: 50%;
+  animation: sunRiseX $skyColorTime ease-in $skyColorTime * -0.3 infinite;
+}
+@keyframes sunRiseY {
+  0% {top: 100%;}
+  25% {top: 5%;}
+  50% {top: 5%;}
+  60% {top: 0%;}
+  70% {top: 100%;}
+  100% {top: 100%;}
+}
+@keyframes sunRiseX {
+  0% {right: 50%; opacity: 1;}
+  25% {right: 5%; opacity: 1;}
+  50% {right: 5%; opacity: 1;}
+  60% {right: -20%; opacity: 0;}
+  70% {right: -20%; opacity: 0;}
+  80% {right: 50%; opacity: 1;}
+  100% {right: 50%; opacity: 1;}
+}
+
