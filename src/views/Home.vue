@@ -5,6 +5,7 @@
         <vue-page-transition name="flip-y" style="height: 100%">
           <router-view />
         </vue-page-transition>
+        <div v-if="!isWelcomePage" class="blur"></div>
       </div>
     </div>
   </div>
@@ -16,8 +17,12 @@
 export default {
   name: 'Home',
   components: {
-
   },
+  computed: {
+    isWelcomePage() {
+      return this.$route.fullPath === "/"
+    }
+  }
 };
 </script>
 
@@ -56,6 +61,17 @@ export default {
   @include xsDown {
     padding: 10px;
     box-shadow: inset 0 0 0 10px $bookCoverBrown;
+  }
+  .blur {
+    width: calc(100% - 24px);
+    height: 50px;
+    position: absolute;
+    top: 12px; left: 12px;
+    background: linear-gradient(to bottom, white 66%, transparent);
+    @include xsDown {
+      width: calc(100% - 20px);
+      top: 10px; left: 10px;
+    }  
   }
 }
 
