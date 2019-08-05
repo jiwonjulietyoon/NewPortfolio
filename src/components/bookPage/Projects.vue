@@ -11,19 +11,25 @@
             class="projectFlex"
           >
             <div class="projectBox">
-              <img :src="p.img" alt="Project Overview">
+              <img :src="require(`@/assets/projects/${p.img}`)" alt="Project Overview">
               <div class="projectInfo">
                 <div class="details">
-
+                  <div class="Title">{{p.title}}</div>
+                  <div class="Info">{{p.info}}</div>
                 </div>
                 <div class="btn-box">
-                  <button class="btn">View More</button>
-                  <button class="btn">View Code</button>
+                  <a :href="p.more" target="_blank">
+                    <button class="btn more">View More</button>
+                  </a>
+                  <a :href="p.git" target="_blank">
+                    <button class="btn code">View Code</button>
+                  </a>
                 </div>
               </div>
               
             </div>
           </v-flex>
+
         </v-layout>
       </v-container>
     </div>
@@ -49,7 +55,7 @@ export default {
           id: 1,
           title: 'Movie Recommendation App',
           info: '[May 2019] Movie Recommendation Web Service (SPA) / Built on Django & Python via c9.io / Vue.js, Axios',
-          img: "https://picsum.photos/id/1006/500/500",
+          img: "prj1_overview.png",
           more: 'https://drive.google.com/drive/folders/1nF4oy4G7vFhJsOuhYuLx8J7F-98qmicc?usp=sharing',
           git: 'https://github.com/ChangmoKang/PJT'
         },
@@ -57,7 +63,7 @@ export default {
           id: 2,
           title: 'Sample 2',
           info: 'Then this will state that the font-size of the element should always be 100% of the height of the viewport at all times (50vh would be 50%, 15vh would be 15% and so on).',
-          img: "https://picsum.photos/id/101/500/500",
+          img: "prj1_overview.png",
           more: 'https://drive.google.com/drive/folders/1nF4oy4G7vFhJsOuhYuLx8J7F-98qmicc?usp=sharing',
           git: 'https://github.com/ChangmoKang/PJT'
         },
@@ -65,7 +71,7 @@ export default {
           id: 3,
           title: 'Sample 3',
           info: 'In the demo below try resizing the height of the example to watch the type stretch:',
-          img: "https://picsum.photos/id/102/500/500",
+          img: "prj1_overview.png",
           more: 'https://drive.google.com/drive/folders/1nF4oy4G7vFhJsOuhYuLx8J7F-98qmicc?usp=sharing',
           git: 'https://github.com/ChangmoKang/PJT'
         },
@@ -73,7 +79,7 @@ export default {
           id: 4,
           title: 'Sample 4',
           info: 'In the demo below try resizing the height of the example to watch the type stretch:',
-          img: "https://picsum.photos/id/1040/500/500",
+          img: "prj1_overview.png",
           more: 'https://drive.google.com/drive/folders/1nF4oy4G7vFhJsOuhYuLx8J7F-98qmicc?usp=sharing',
           git: 'https://github.com/ChangmoKang/PJT'
         }
@@ -96,13 +102,11 @@ export default {
   margin: 0 auto;
 }
 .projectFlex {
-  // border: 1px solid red;
 }
 .projectBox {
   width: 90%;
   margin: 20px auto;
-  height: 170px;
-  // border: 1px solid blue;
+  height: 200px;
   border-radius: 5px;
   overflow: hidden;
   position: relative;
@@ -120,7 +124,17 @@ export default {
     opacity: 0;
     .details {
       height: calc(100% - 50px);
-      // border: 1px solid red;
+      padding: 20px 20px 5px;
+      font-family: $fontContent;
+      color: white;
+      overflow-y: auto;
+      .Title {
+        font-size: 0.9em;
+        margin-bottom: 10px;
+      }
+      .Info {
+        font-size: 0.8em;
+      }
     }
     .btn-box {
       height: 50px;
@@ -131,8 +145,8 @@ export default {
       .btn {
         font-size: 0.8em;
         font-family: $fontContent;
-        &:first-child {@include btnSlideRight(white);}
-        &:last-child {@include btnSlideLeft(white);}
+        &.more {@include btnSlideRight(white);}
+        &.code {@include btnSlideLeft(white);}
       }
     }
   }
