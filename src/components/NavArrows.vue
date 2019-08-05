@@ -39,6 +39,16 @@ nav {
   width: 100%;
   height: 50px;
   position: relative;
+  // box-shadow: 0 -15px 15px -15px white;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 15px;
+    position: absolute;
+    bottom: 100%; left: 0;
+    // border: 1px solid red;
+    background: linear-gradient(to bottom, transparent, white);
+  }
 }
 .navBtnDisabled {display: none;}
 .navBtn {
