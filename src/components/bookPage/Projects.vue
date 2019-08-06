@@ -123,7 +123,7 @@ export default {
     transition: all 0.3s;
     opacity: 0;
     .details {
-      height: calc(100% - 50px);
+      height: calc(100% - 55px);
       padding: 20px 20px 5px;
       font-family: $fontContent;
       color: white;
@@ -137,7 +137,7 @@ export default {
       }
     }
     .btn-box {
-      height: 50px;
+      height: 55px;
       display: flex;
       justify-content: space-evenly;
       align-items: baseline;

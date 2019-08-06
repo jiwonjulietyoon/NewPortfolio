@@ -300,6 +300,8 @@ export default {
   & > div {float: left;}
   & > .main {
     width: calc(100% - 60px);
+    // height: auto;
+    // min-height: 100px;
     height: 100px;
     background-color: $bannerLt;
     padding: 10px 20px;

@@ -25,27 +25,47 @@ $skyColorTimeHalf: 15s;
   animation: sunRiseY $skyColorTime ease-out  $skyColorTime * -0.3 infinite;
 }
 .sun {
-  @include sunShape(70px);
+  @include sunShape(60px);
   @include mdDown {
-    @include sunShape(60px);
+    @include sunShape(50px);
   }
   @include smDown {
-    @include sunShape(50px);
+    @include sunShape(40px);
   }
   border-radius: 50%;
   background: radial-gradient(circle, #fffc00 0%, #F2C94C 100%);
   position: absolute;
   top: 0; right: 50%;
   animation: sunRiseX $skyColorTime ease-in $skyColorTime * -0.3 infinite;
+  .rays {
+    border-radius: 50%;
+    position: absolute;
+    background: #F2C94C;
+    &:nth-child(1) {bottom: 120%; left: 50%; transform: translate(-50%);}
+    &:nth-child(2) {top: 120%; left: 50%; transform: translate(-50%);}
+    &:nth-child(3) {left: 120%; top: 50%; transform: translate(0, -50%);}
+    &:nth-child(4) {right: 120%; top: 50%; transform: translate(0, -50%);}
+    &:nth-child(5) {top: -10%; left: -10%;}
+    &:nth-child(6) {top: -10%; right: -10%;}
+    &:nth-child(7) {bottom: -10%; left: -10%;}
+    &:nth-child(8) {bottom: -10%; right: -10%;}
+    &.bg {width: 6px; height: 6px;}
+    &.sm {width: 4px; height: 4px;}
+    @include mdDown {
+      &.bg {width: 5px; height: 5px;}
+      &.sm {width: 3px; height: 3px;}
+    }
+  }
 }
+
 @keyframes sunRiseY {
   0%, 70%, 100% {top: 100%;}
-  25%, 50% {top: 5%;}
+  25%, 50% {top: 8%;}
   60% {top: 0%;}
 }
 @keyframes sunRiseX {
   0%, 80%, 100% {right: 50%; opacity: 1;}
-  25%, 50% {right: 5%; opacity: 1;}
+  25%, 50% {right: 8%; opacity: 1;}
   60%, 70% {right: -20%; opacity: 0;}
   70% {right: -20%; opacity: 0;}
 }

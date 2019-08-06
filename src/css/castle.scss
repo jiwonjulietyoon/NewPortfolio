@@ -101,9 +101,14 @@ $gateLt: #6d2f17;
       text-align: center;
       top: 40%; left: 60%;
       transform: translate(-50%, -50%) skew(-15deg);
+      font-size: 1.2em;
+      @include lgDown {font-size: 1.1em;}
       @include mdDown {font-size: 0.9em;}
       @include smDown {font-size: 0.75em;}
       @include xsDown {font-size: 1.2em;}
+      @include maxWidth(550) {font-size: 1.1em;}
+      @include maxWidth(500) {font-size: 1em;}
+      @include maxWidth(400) {font-size: 0.8em;}
     }
   }
   &.b4 > .bannerDeco, &.b5 > .bannerDeco {

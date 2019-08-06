@@ -3,7 +3,16 @@
 
     <!-- SUN -->
     <div class="sunOuter">
-      <div class="sun"></div>
+      <div class="sun">
+        <div class="rays bg"></div>
+        <div class="rays bg"></div>
+        <div class="rays bg"></div>
+        <div class="rays bg"></div>
+        <div class="rays sm"></div>
+        <div class="rays sm"></div>
+        <div class="rays sm"></div>
+        <div class="rays sm"></div>
+      </div>
     </div>
 
     <!-- MOON -->

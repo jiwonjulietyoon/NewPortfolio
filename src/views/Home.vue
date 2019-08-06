@@ -12,8 +12,6 @@
 </template>
 
 <script>
-
-
 export default {
   name: 'Home',
   components: {
@@ -48,7 +46,7 @@ export default {
   height: 94%;
   margin: 0 auto;
   position: relative;
-  // animation: bookRise 1s;
+  animation: bookRise 1s;
   animation-fill-mode: forwards;
 }
 #bookContainer {
