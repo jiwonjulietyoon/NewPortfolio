@@ -129,7 +129,8 @@ export default {
       color: white;
       overflow-y: auto;
       .Title {
-        font-size: 0.9em;
+        font-size: 1em;
+        font-weight: bold;
         margin-bottom: 10px;
       }
       .Info {
