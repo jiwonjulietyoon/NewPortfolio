@@ -16,9 +16,7 @@
               class="selectedCard"
             >
               <div class="outer">
-                <div class="inner">
 
-                </div>
               </div>
             </v-flex>
           </v-layout>
@@ -33,6 +31,7 @@
 
 <script>
 import NavArrows from '@/components/NavArrows';
+import $ from 'jquery';
 
 export default {
   name: 'Contact',
@@ -43,6 +42,35 @@ export default {
     return {
       prev: "Projects",
     }
+  },
+  methods: {
+    setSelectedCardSize() {
+      let setSize = function() {
+        let w = $('.selectedCard').width();
+        let h = $('.selectedCard').height();
+        let selOuter = $('.selectedCard > .outer');
+        let W; let H;
+        if ((w-20) * 1.4 >= h) {
+          W = h / 1.4;
+          H = h;
+        }
+        else {
+          W = w - 20;
+          H = W * 1.4
+        }
+        selOuter.css({
+          'width': W,
+          'height': H
+        });
+      }
+      setSize();
+      $(window).resize(function() {
+        setSize();
+      });
+    }
+  },
+  mounted() {
+    this.setSelectedCardSize();
   }
 }
 </script>
@@ -60,23 +88,28 @@ export default {
 }
 
 .cardPreview, .selectedCard {
-  height: 100px;
   border: 1px solid red;
   @include minWidth(601) {
     min-height: calc(94vh - 260px);
   }
-  @include maxWidth(600) {
-    
-  }
 }
 
 .cardPreview {
-
+  @include maxWidth(600) {
+    min-height: 150px;
+  }
 }
 
 .selectedCard {
+  @include maxWidth(600) {
+    min-height: 200px;
+  }
+  position: relative;
   .outer {
-    // width: 
+    margin: 0 auto;
+    @include centerItem;
+    border-radius: 5px;
+    border: 1px solid blue;
   }
 }
 
