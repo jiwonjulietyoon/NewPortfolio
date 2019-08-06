@@ -59,8 +59,8 @@
         </div>
       </div>
     </div>
-    <div id="confetti"></div>
     <NavArrows :prevLabel="prev.label" :prevName="prev.name" :nextLabel="next" :nextName="next" />
+    <div id="confetti"></div>
   </section>
 </template>
 
@@ -346,6 +346,11 @@ export default {
   width: calc(100% - 24px); height: calc(100% - 24px);
   position: absolute;
   top: 12px; left: 12px;
+  pointer-events: none;
+  @include xsDown {
+    width: calc(100% - 20px); height: calc(100% - 20px);
+    top: 10px; left: 10px;
+  }
 }
 
 </style>

@@ -3,15 +3,12 @@
 $skyColorTime: 30s;
 $skyColorTimeHalf: 15s;
 
-
 .celestialSection {
-  border: 1px solid hotpink;
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
 }
-
 
 
 //////////// SUN ////////////////
@@ -90,7 +87,6 @@ $skyColorTimeHalf: 15s;
   45%, 55% {transform: rotate(15deg);}
   50% {transform: rotate(-15deg);}
 }
-
 
 
 
@@ -313,7 +309,6 @@ $skyColorTimeHalf: 15s;
 
 
 
-
 //////////// CLOUDS ////////////////
 
 @keyframes cloudOpacity {
@@ -399,6 +394,4 @@ $skyColorTimeHalf: 15s;
   .c3 & {left: 40%;}
   .c4 & {left: 10%;}
 }
-
-
 
