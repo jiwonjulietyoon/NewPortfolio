@@ -150,7 +150,7 @@ $skyColorTimeHalf: 15s;
 }
 
 .star.s1 {
-  @include starContainer(1px, 3%, 3%);
+  @include starContainer(1.5px, 4%, 3%);
   animation: starShine1 $skyColorTime linear infinite;
   // @include smDown {display: none;}  // hide on mobile
   & > div {
@@ -159,7 +159,7 @@ $skyColorTimeHalf: 15s;
   }
 }
 .star.s2 {
-  @include starContainer(1px, 20%, 5%);
+  @include starContainer(2px, 16%, 5%);
   animation: starShine2 $skyColorTime linear infinite;
   & > div {
     @include starInner(0, 0);
@@ -167,7 +167,7 @@ $skyColorTimeHalf: 15s;
   }
 }
 .star.s3 {
-  @include starContainer(1.5px, 8%, 11%);
+  @include starContainer(1.5px, 10%, 11%);
   animation: starShine1 $skyColorTime linear infinite;
   & > div {
     @include starInner(0, 0);
@@ -175,7 +175,7 @@ $skyColorTimeHalf: 15s;
   }
 }
 .star.s4 {
-  @include starContainer(1px, 17%, 14%);
+  @include starContainer(2px, 22%, 14%);
   animation: starShine3 $skyColorTime linear infinite;
   & > div {
     @include starInner(0, 0);
@@ -183,7 +183,7 @@ $skyColorTimeHalf: 15s;
   }
 }
 .star.s5 {
-  @include starContainer(1px, 13%, 20%);
+  @include starContainer(2px, 15%, 20%);
   animation: starShine4 $skyColorTime linear infinite;
   & > div {
     @include starInner(0, 0);
@@ -191,7 +191,7 @@ $skyColorTimeHalf: 15s;
   }
 }
 .star.s6 {
-  @include starContainer(1.5px, 4%, 27%);
+  @include starContainer(1.5px, 8%, 27%);
   animation: starShine4 $skyColorTime linear infinite;
   & > div {
     @include starInner(2px, 0.5px);
@@ -199,7 +199,7 @@ $skyColorTimeHalf: 15s;
   }
 }
 .star.s7 {
-  @include starContainer(1px, 9%, 32%);
+  @include starContainer(2px, 12%, 32%);
   animation: starShine3 $skyColorTime linear infinite;
   & > div {
     @include starInner(0, 0);
@@ -207,7 +207,7 @@ $skyColorTimeHalf: 15s;
   }
 }
 .star.s8 {
-  @include starContainer(1px, 16%, 36%);
+  @include starContainer(2px, 22%, 36%);
   animation: starShine1 $skyColorTime linear infinite;
   & > div {
     @include starInner(0, 0);
@@ -215,7 +215,7 @@ $skyColorTimeHalf: 15s;
   }
 }
 .star.s9 {
-  @include starContainer(1px, 10%, 43%);
+  @include starContainer(2px, 13%, 43%);
   animation: starShine1 $skyColorTime linear infinite;
   & > div {
     @include starInner(3px, 1.5px);
@@ -223,7 +223,7 @@ $skyColorTimeHalf: 15s;
   }
 }
 .star.s10 {
-  @include starContainer(1.5px, 14%, 48%);
+  @include starContainer(1.5px, 19%, 48%);
   animation: starShine2 $skyColorTime linear infinite;
   & > div {
     @include starInner(0, 0);
@@ -231,7 +231,7 @@ $skyColorTimeHalf: 15s;
   }
 }
 .star.s11 {
-  @include starContainer(1px, 22%, 51%);
+  @include starContainer(2px, 5%, 51%);
   animation: starShine4 $skyColorTime linear infinite;
   & > div {
     @include starInner(0, 0);
@@ -239,7 +239,7 @@ $skyColorTimeHalf: 15s;
   }
 }
 .star.s12 {
-  @include starContainer(1px, 7%, 56%);
+  @include starContainer(1px, 10%, 56%);
   animation: starShine3 $skyColorTime linear infinite;
   & > div {
     @include starInner(2px, 1px);
@@ -247,7 +247,7 @@ $skyColorTimeHalf: 15s;
   }
 }
 .star.s13 {
-  @include starContainer(1px, 18%, 64%);
+  @include starContainer(1.5px, 25%, 64%);
   animation: starShine2 $skyColorTime linear infinite;
   & > div {
     @include starInner(0, 0);
@@ -255,7 +255,7 @@ $skyColorTimeHalf: 15s;
   }
 }
 .star.s14 {
-  @include starContainer(1.5px, 21%, 69%);
+  @include starContainer(1.5px, 8%, 69%);
   animation: starShine1 $skyColorTime linear infinite;
   & > div {
     @include starInner(0, 0);
@@ -263,7 +263,7 @@ $skyColorTimeHalf: 15s;
   }
 }
 .star.s15 {
-  @include starContainer(1px, 5%, 75%);
+  @include starContainer(2px, 5%, 75%);
   animation: starShine4 $skyColorTime linear infinite;
   & > div {
     @include starInner(0, 0);
@@ -279,7 +279,7 @@ $skyColorTimeHalf: 15s;
   }
 }
 .star.s17 {
-  @include starContainer(1px, 12%, 85%);
+  @include starContainer(2px, 18%, 85%);
   animation: starShine4 $skyColorTime linear infinite;
   & > div {
     @include starInner(0, 0);
@@ -287,7 +287,7 @@ $skyColorTimeHalf: 15s;
   }
 }
 .star.s18 {
-  @include starContainer(1px, 19%, 88%);
+  @include starContainer(1.5px, 8%, 88%);
   animation: starShine2 $skyColorTime linear infinite;
   & > div {
     @include starInner(0, 0);
@@ -295,7 +295,7 @@ $skyColorTimeHalf: 15s;
   }
 }
 .star.s19 {
-  @include starContainer(1.5px, 11%, 90%);
+  @include starContainer(1.5px, 16%, 90%);
   animation: starShine2 $skyColorTime linear infinite;
   & > div {
     @include starInner(0, 0);
@@ -303,7 +303,7 @@ $skyColorTimeHalf: 15s;
   }
 }
 .star.s20 {
-  @include starContainer(1px, 6%, 96%);
+  @include starContainer(1.5px, 6%, 96%);
   animation: starShine3 $skyColorTime linear infinite;
   & > div {
     @include starInner(0, 0);
