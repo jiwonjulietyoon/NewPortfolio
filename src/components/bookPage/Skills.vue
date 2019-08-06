@@ -59,6 +59,7 @@
         </div>
       </div>
     </div>
+    <div id="confetti"></div>
     <NavArrows :prevLabel="prev.label" :prevName="prev.name" :nextLabel="next" :nextName="next" />
   </section>
 </template>
@@ -66,6 +67,7 @@
 
 <script>
 import NavArrows from '@/components/NavArrows';
+import confetti from '@/js/confetti.js';
 
 export default {
   name: 'Skills',
@@ -80,6 +82,9 @@ export default {
       },
       next: "Projects"
     }
+  },
+  mounted() {
+    confetti.confetti();
   }
 }
 </script>
@@ -337,5 +342,10 @@ export default {
   }
 }
 
+#confetti {
+  width: calc(100% - 24px); height: calc(100% - 24px);
+  position: absolute;
+  top: 12px; left: 12px;
+}
 
 </style>
