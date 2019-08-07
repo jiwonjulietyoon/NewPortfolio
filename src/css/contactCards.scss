@@ -1,0 +1,44 @@
+@import "@/css/style.scss";
+
+.previewCard {
+  width: 100%; height: 100%;
+  border-radius: 2px;
+  background: beige;
+  position: relative;
+}
+
+.previewCard > .side {
+  width: 13%;
+  height: 80%;
+  position: absolute;
+  top: 10%;
+}
+
+.previewCard > .main {
+  width: 64%;
+  height: 80%;
+  @include centerItem;
+  background: purple;
+  .layer1 {
+    width: 92%; height: 95%;
+    background: gold;
+    @include centerItem;
+  }
+  .layer2 {
+    width: 87%; height: 93%;
+    @include centerItem;
+    background: teal;
+  }
+  .layer3 {
+    width: 92%; height: 95%;
+    background: bisque;
+    @include centerItem;
+  }
+  .letter {
+    @include centerItem;
+    font-family: $fontFancy;
+    font-size: 1.8em;
+    @include mdDown {font-size: 1.5em;}
+    @include maxWidth(600) {font-size: 1.2em;}
+  }
+}
