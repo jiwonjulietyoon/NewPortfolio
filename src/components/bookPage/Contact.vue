@@ -11,7 +11,7 @@
               class="cardPreview"
             >
               <div class="content">
-                <div class="diamond">
+                <div class="diamond" :class="{'bobbing': hoverOnCards}">
                   <div class="trapezoid">
                     <div class="triUp"></div>
                   </div>
@@ -19,19 +19,24 @@
                     <div class="triDown"></div>
                   </div>
                 </div>
-                <div class="cards" :style="cardsRotateStyle">
-                  <div class="inner">
+                <div 
+                  class="cards" 
+                  :style="cardsRotateStyle"
+                  @mouseenter="hoverOnCards = true"
+                  @mouseleave="hoverOnCards = false"
+                >
+                  <div class="cardsContainer">
                     <div class="card intro" @click="rotateCards(0)">
-                      <IntroPreview class="inner" />
+                      <IntroPreview class="inner" :style="cardRotateStyle" />
                     </div>
-                    <div class="card email" @click="rotateCards(-0.25)">
-                      <EmailPreview class="inner" /> 
+                    <div class="card email" @click="rotateCards(1)">
+                      <EmailPreview class="inner" :style="cardRotateStyle" /> 
                     </div>
-                    <div class="card git" @click="rotateCards(-0.5)">
-                      <GitPreview class="inner" />
+                    <div class="card git" @click="rotateCards(2)">
+                      <GitPreview class="inner" :style="cardRotateStyle" />
                     </div>
-                    <div class="card linkedin" @click="rotateCards(0.25)">
-                      <LinkedinPreview class="inner" />
+                    <div class="card linkedin" @click="rotateCards(3)">
+                      <LinkedinPreview class="inner" :style="cardRotateStyle" />
                     </div>
                   </div>
                 </div>
@@ -71,6 +76,8 @@ import Git from '@/components/bookPage/contactCards/Git';
 import GitPreview from '@/components/bookPage/contactCards/GitPreview';
 import Linkedin from '@/components/bookPage/contactCards/Linkedin';
 import LinkedinPreview from '@/components/bookPage/contactCards/LinkedinPreview';
+
+import contactCards from '@/js/contactCards.js';
 import $ from 'jquery';
 
 export default {
@@ -89,75 +96,50 @@ export default {
   data() {
     return {
       prev: "Projects",
-      cardsRotateTurns: 0
+      currentCardPosition: 0,
+      cardsRotateTurns: 0,
+      cardRotateTurns: 0,
+      cardsRotateTime: 0,
+      hoverOnCards: false,
     }
   },
   computed: {
     cardsRotateStyle() {
-      return { transform: 'rotate(' + this.cardsRotateTurns + 'turn)'}
+      return { 
+        transform: 'rotate(' + this.cardsRotateTurns + 'turn)',
+        transition: 'all ' + this.cardsRotateTime + 's'
+      }
+    },
+    cardRotateStyle() {
+      return { 
+        transform: 'rotate(' + this.cardRotateTurns + 'turn)',
+        transition: 'all ' + this.cardsRotateTime + 's'
+      }
     }
   },
   methods: {
-    setSelectedCardSize() {
-      let setSize = function() {
-        let w = $('.selectedCard').width();
-        let h = $('.selectedCard').height();
-        let selOuter = $('.selectedCard > .outer');
-        let W; let H;
-        if ((w-20) * 1.4 >= h) {
-          W = h / 1.4;
-          H = h;
+    rotateCards(target) {
+      let res = this.currentCardPosition - target;
+      if (Math.abs(res) <= 2) {
+        this.cardsRotateTime = Math.abs(res) * 0.6;
+        this.cardsRotateTurns += (res * 0.25);
+        this.cardRotateTurns -= (res * 0.25);
+      } else {
+        this.cardsRotateTime = 0.6;
+        if (res < 0) {
+          this.cardsRotateTurns += 0.25;
+          this.cardRotateTurns -= 0.25;
+        } else {
+          this.cardsRotateTurns -= 0.25;
+          this.cardRotateTurns += 0.25;
         }
-        else {
-          W = w - 20;
-          H = W * 1.4
-        }
-        selOuter.css({
-          'width': W,
-          'height': H
-        });
       }
-      setSize();
-      $(window).resize(function() {
-        setSize();
-      });
-    },
-    setCardPreviewSize() {
-      let setSize = function() {
-        let w = $('.cardPreview').width() - 20;
-        let h = $('.cardPreview').height();
-        let content = $('.cardPreview > .content');
-        let cards = $('.cardPreview > .content > .cards');
-        let W; let H;
-        if ((w + 80) >= h) {
-          W = h - 80;
-          H = h;
-        }
-        else {
-          W = w;
-          H = w + 80;
-        }
-        content.css({
-          'width': W,
-          'height': H
-        });
-        cards.css({
-          'width': W,
-          'height': W
-        })
-      }
-      setSize();
-      $(window).resize(function() {
-        setSize();
-      });
-    },
-    rotateCards(turn) {
-      this.cardsRotateTurns = turn;
+      this.currentCardPosition = target;
     }
   },
   mounted() {
-    this.setSelectedCardSize();
-    this.setCardPreviewSize();
+    contactCards.setSelectedCardSize();
+    contactCards.setCardPreviewSize();
   }
 }
 </script>
@@ -214,6 +196,7 @@ export default {
 .diamond {
   margin: 0 auto;
   width: 60px; height: 60px;
+  transition: all 0.5s;
   // border: 1px solid olive;
   @include maxWidth(600) {
     width: 40px; height: 40px;
@@ -287,8 +270,13 @@ export default {
   }
 }
 
-
-
+.diamond.bobbing {
+  animation: bobbing 0.8s ease-out infinite alternate;
+}
+@keyframes bobbing {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(5px);}
+}
 
 
 ////////////// PREVIEW CARDS ///////////////  
@@ -298,12 +286,12 @@ export default {
   // border: 1px solid hotpink;
   border-radius: 50%;
   position: relative;
-  transition: all 0.5s;
+  // transition: all 0.5s;
   &:hover {
-    .inner {transform: scale(1.01);}
-    .card {box-shadow: 0px 0px 7px 0px #BBBBBB;}
+    .cardsContainer {transform: scale(1.01);}
+    .inner {box-shadow: 0px 0px 7px 0px #BBBBBB;}
   }
-  .inner {
+  .inner, .cardsContainer {
     width: 100%; 
     height: 100%; 
     position: relative;
@@ -322,15 +310,12 @@ export default {
     }
     &.email {
       top: 35%; right: 5%;
-      transform: rotate(90deg);
     }
     &.git {
       bottom: 0; left: 39%;
-      transform: rotate(180deg);
     }
     &.linkedin {
       top: 35%; left: 5%;
-      transform: rotate(-90deg);
     }
   }
 }
