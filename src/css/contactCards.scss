@@ -1,13 +1,16 @@
 @import "@/css/style.scss";
 
 
+$cardBg: #EAD78F;
+
+
 ///////////// PREVIEW CARDS ////////
 
 
 .previewCard {
   width: 100%; height: 100%;
   border-radius: 2px;
-  background: beige;
+  background: $cardBg;
   position: relative;
 }
 
@@ -54,7 +57,7 @@
 
 .selectedCard {
   position: relative;
-  background: beige;
+  background: $cardBg;
   border-radius: 5px;
   & > .grungeBorder {
     width: 92%;
@@ -65,18 +68,10 @@
   }
   .top, .middle, .bottom {
     position: absolute;
-    background: beige;
+    background: $cardBg;
     width: 94%;
     left: 3%;
-    box-shadow: 0 0 4px 0 beige;
-    .text {
-      @include centerItem;
-      font-family: $fontFancy;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 1.5em;
-      white-space: nowrap;
-    }
+    box-shadow: 0 0 4px 0 $cardBg;
   }
   .top {
     height: 12%;
@@ -89,6 +84,63 @@
   .bottom {
     height: 12%;
     bottom: 2%;
+  }
+  .text {
+    @include centerItem;
+    font-family: $fontFancy;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 1.5em;
+    white-space: nowrap;
+  }
+  .text2 {
+    @include centerItem;
+    font-family: $fontFancy;
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 1.3em;
+    white-space: pre-wrap;
+  }
+  .address {
+    height: 60%;
+    position: relative;
+  }
+  .copy {
+    height: 40%;
+    position: relative;
+    .icon {
+      position: absolute;
+      bottom: 30%;
+      left: 50%;
+      transform: translate(-50%);
+      cursor: pointer;
+      i {
+        font-size: 2em;
+        color: rgba(0, 0, 0, 0.6);
+        transition: color 0.3s;
+      }
+      &:hover {
+        i {color: rgba(0, 0, 0, 0.8)};
+        .tooltip{
+          bottom: 100%;
+          opacity: 1;
+        }
+      }
+    }
+    .tooltip {
+      padding: 3px 10px;
+      font-family: $fontFancy;
+      font-size: 0.8em;
+      font-style: italic;
+      letter-spacing: 2px;
+      white-space: nowrap;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+      bottom: 90%;
+      opacity: 0;
+      transition: all 0.5s;
+    }
   }
 }
 

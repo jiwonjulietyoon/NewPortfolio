@@ -58,16 +58,16 @@
             >
               <div class="outer">
                 <transition name="slideFade">
-                  <Linkedin class="card linkedin" v-show="currentCardPosition === 3"/>
+                  <Card :text="cardTexts[2]" class="card email" v-if="currentCardPosition === 3" />
                 </transition>
                 <transition name="slideFade">
-                  <Git class="card git" v-show="currentCardPosition === 2"/>
+                  <Card :text="cardTexts[1]" class="card email" v-if="currentCardPosition === 2" />
                 </transition>
                 <transition name="slideFade">
-                  <Email class="card email" v-show="currentCardPosition === 1"/>
+                  <Card :text="cardTexts[0]" class="card email" v-if="currentCardPosition === 1" />
                 </transition>
                 <transition name="slideFade">
-                  <Intro class="card intro" v-show="currentCardPosition === 0"/>
+                  <Intro class="card intro" v-if="currentCardPosition === 0"/>
                 </transition>
               </div>
             </v-flex>
@@ -84,15 +84,12 @@
 import NavArrows from '@/components/NavArrows';
 import Intro from '@/components/bookPage/contactCards/Intro';
 import IntroPreview from '@/components/bookPage/contactCards/IntroPreview';
-import Email from '@/components/bookPage/contactCards/Email';
 import EmailPreview from '@/components/bookPage/contactCards/EmailPreview';
-import Git from '@/components/bookPage/contactCards/Git';
 import GitPreview from '@/components/bookPage/contactCards/GitPreview';
-import Linkedin from '@/components/bookPage/contactCards/Linkedin';
 import LinkedinPreview from '@/components/bookPage/contactCards/LinkedinPreview';
+import Card from '@/components/bookPage/contactCards/Card';
 
 import contactCards from '@/js/contactCards.js';
-import $ from 'jquery';
 
 export default {
   name: 'Contact',
@@ -100,16 +97,31 @@ export default {
     NavArrows,
     Intro,
     IntroPreview,
-    Email,
     EmailPreview,
-    Git,
     GitPreview,
-    Linkedin,
-    LinkedinPreview
+    LinkedinPreview,
+    Card
   },
   data() {
     return {
       prev: "Projects",
+      cardTexts: [
+        {
+          top: "Email",
+          address: "jiwonjulietyoon @gmail.com",
+          bottom: "Email"
+        },
+        {
+          top: "GitHub",
+          address: "github.com /jiwonjulietyoon",
+          bottom: "GitHub"
+        },
+        {
+          top: "LinkedIn",
+          address: "linkedin.com/in /jiwon-yoon -155b89187",
+          bottom: "LinkedIn"
+        }
+      ],
       currentCardPosition: 0,
       cardsRotateTurns: 0,
       cardRotateTurns: 0,
