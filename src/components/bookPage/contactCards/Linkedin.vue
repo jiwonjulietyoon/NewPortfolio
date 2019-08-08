@@ -1,6 +1,16 @@
 <template>
   <div class="selectedCard">
-
+    <div class="grungeBorder">
+      <div class="top">
+        <div class="text"></div>
+      </div>
+      <div class="middle">
+        
+      </div>
+      <div class="bottom">
+        <div class="text">LinkedIn</div>
+      </div>
+    </div>
   </div>
 </template>
 

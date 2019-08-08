@@ -27,22 +27,29 @@
                 >
                   <div class="cardsContainer">
                     <div class="card intro" @click="rotateCards(0)">
-                      <IntroPreview class="inner" :style="cardRotateStyle" />
+                      <div class="outer">
+                        <IntroPreview class="inner" :style="cardRotateStyle" />
+                      </div>
                     </div>
                     <div class="card email" @click="rotateCards(1)">
-                      <EmailPreview class="inner" :style="cardRotateStyle" /> 
+                      <div class="outer">
+                        <EmailPreview class="inner" :style="cardRotateStyle" /> 
+                      </div>
                     </div>
                     <div class="card git" @click="rotateCards(2)">
-                      <GitPreview class="inner" :style="cardRotateStyle" />
+                      <div class="outer">
+                        <GitPreview class="inner" :style="cardRotateStyle" />
+                      </div>
                     </div>
                     <div class="card linkedin" @click="rotateCards(3)">
-                      <LinkedinPreview class="inner" :style="cardRotateStyle" />
+                      <div class="outer">
+                        <LinkedinPreview class="inner" :style="cardRotateStyle" />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </v-flex>
-
 
             <!-- SELECTED CARD -->
             <v-flex
@@ -50,15 +57,22 @@
               class="selectedCard"
             >
               <div class="outer">
-                <Intro class="card intro" />
-                <Email class="card email" />
-                <Git class="card git" />
-                <Linkedin class="card linkedin" />
+                <transition name="slideFade">
+                  <Linkedin class="card linkedin" v-show="currentCardPosition === 3"/>
+                </transition>
+                <transition name="slideFade">
+                  <Git class="card git" v-show="currentCardPosition === 2"/>
+                </transition>
+                <transition name="slideFade">
+                  <Email class="card email" v-show="currentCardPosition === 1"/>
+                </transition>
+                <transition name="slideFade">
+                  <Intro class="card intro" v-show="currentCardPosition === 0"/>
+                </transition>
               </div>
             </v-flex>
           </v-layout>
         </v-container>
-
 
     </div>
     <NavArrows :prevLabel="prev" :prevName="prev" :nextActive="false" />
@@ -159,7 +173,7 @@ export default {
   }
 }
 .cardPreview, .selectedCard {
-  border: 1px solid red;
+  // border: 1px solid red;
   @include minWidth(601) {
     min-height: calc(94vh - 260px);
   }
@@ -174,22 +188,6 @@ export default {
     // border: 1px solid cyan;
   }
 }
-.selectedCard {
-  @include maxWidth(600) {
-    min-height: 200px;
-  }
-  position: relative;
-  .outer {
-    margin: 0 auto;
-    @include centerItem;
-    border-radius: 5px;
-    border: 1px solid blue;
-  }
-}
-
-
-
-
 
 ////////////// DIAMOND ///////////////
 
@@ -288,10 +286,10 @@ export default {
   position: relative;
   // transition: all 0.5s;
   &:hover {
-    .cardsContainer {transform: scale(1.01);}
+    .cardsContainer {transform: scale(1.02);}
     .inner {box-shadow: 0px 0px 7px 0px #BBBBBB;}
   }
-  .inner, .cardsContainer {
+  .cardsContainer, .outer, .inner {
     width: 100%; 
     height: 100%; 
     position: relative;
@@ -305,8 +303,7 @@ export default {
     transition: all 0.3s;
     // border: 1px solid coral;
     &.intro {
-      top: 0; left: 50%;
-      transform: translate(-50%);
+      top: 0; left: 39%;
     }
     &.email {
       top: 35%; right: 5%;
@@ -317,14 +314,55 @@ export default {
     &.linkedin {
       top: 35%; left: 5%;
     }
+    &:hover {
+      transform: scale(1.1);
+      .outer {
+        animation: cardReady 2.5s linear infinite;
+      }
+      .inner {
+        box-shadow: 0px 0px 8px 3px #AAAAAA;
+      }
+    }
   }
+}
+@keyframes cardReady {
+  0%, 100% {transform: rotate(0deg);}
+  25% {transform: rotate(5deg);}
+  75% {transform: rotate(-5deg);}
 }
 
 ////////////// SELECTED CARDS ///////////////  
 
-// .selectedCard .outer 
 
+.selectedCard {
+  @include maxWidth(600) {
+    min-height: 200px;
+  }
+  position: relative;
+  .outer {
+    @include centerItem;
+    border-radius: 5px;
+    // border: 1px solid blue;
+    .card {
+      width: 100%; height: 100%;
+      position: absolute;
+      top: 0; left: 0;
+      box-shadow: 2px 2px 8px 0 #CCCCCC;
+      // transition: all 0.3s;
+    }
+  }
+}
 
+.slideFade-enter-active {
+  transition: all 0.8s ease;
+}
+.slideFade-leave-active {
+  transition: all 0.5s ease;
+}
+.slideFade-enter, .slideFade-leave-to {
+  transform: translateX(20%);
+  opacity: 0;
+}
 
 
 
