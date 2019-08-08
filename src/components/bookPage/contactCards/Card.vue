@@ -10,7 +10,7 @@
         </div>
         <div class="copy">
           <div class="icon" @click="copyText" @mouseout="tooltipReset">
-            <i class="material-icons">flag</i>
+            <i class="material-icons-round">flag</i>
             <span class="tooltip" id="tooltip">Click to copy</span>
           </div>
         </div>
