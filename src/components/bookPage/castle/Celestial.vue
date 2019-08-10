@@ -33,6 +33,13 @@
     <div class="star s19"><div></div></div>
     <div class="star s20"><div></div></div>
 
+    <div class="shootingstar s1"><div></div></div>
+    <div class="shootingstar s2"><div></div></div>
+    <div class="shootingstar s3"><div></div></div>
+    <div class="shootingstar s4"><div></div></div>
+    <div class="shootingstar s5"><div></div></div>
+    <div class="shootingstar s6"><div></div></div>
+
     <!-- CLOUDS -->
     <div class="cloudRow c1">
       <div class="row">
