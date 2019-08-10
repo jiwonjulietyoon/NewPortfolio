@@ -35,6 +35,7 @@ $skyColorTimeHalf: 15s;
     background: -webkit-radial-gradient(circle, #fffc00 0%, #F2C94C 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: sunSpin $skyColorTime ease-in-out $skyColorTime * -0.3 infinite;
   }
 }
 @keyframes sunRiseY {
@@ -47,6 +48,10 @@ $skyColorTimeHalf: 15s;
   25%, 50% {right: 8%; opacity: 1;}
   60%, 70% {right: -20%; opacity: 0;}
   70% {right: -20%; opacity: 0;}
+}
+@keyframes sunSpin {
+  0%, 27% {transform: rotate(0deg);}
+  48%, 100% {transform: rotate(90deg);}
 }
 
 
