@@ -359,6 +359,10 @@ $gateLt: #6d2f17;
     &:nth-of-type(3) {left: calc(400% / 7);}
     &:nth-of-type(4) {left: calc(600% / 7);}
   }
+  & > img {
+    width: 80%;
+    @include centerItem;
+  }
 }
 .castleBdSideL {
   left: 19%;

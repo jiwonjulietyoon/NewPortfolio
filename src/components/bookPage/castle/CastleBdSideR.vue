@@ -4,6 +4,7 @@
     <div class="deco"></div>
     <div class="deco"></div>
     <div class="deco"></div>
+    <img src="~@/assets/shield.svg" alt="Castle Shield">
   </div>
 </template>
 
