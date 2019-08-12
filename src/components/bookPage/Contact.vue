@@ -58,13 +58,13 @@
             >
               <div class="outer">
                 <transition name="slideFade">
-                  <Card :text="cardTexts[2]" class="card email" v-if="currentCardPosition === 3" />
+                  <Card :text="cardTexts[2]" class="card" v-if="currentCardPosition === 3" />
                 </transition>
                 <transition name="slideFade">
-                  <Card :text="cardTexts[1]" class="card email" v-if="currentCardPosition === 2" />
+                  <Card :text="cardTexts[1]" class="card" v-if="currentCardPosition === 2" />
                 </transition>
                 <transition name="slideFade">
-                  <Card :text="cardTexts[0]" class="card email" v-if="currentCardPosition === 1" />
+                  <Card :text="cardTexts[0]" class="card" v-if="currentCardPosition === 1" />
                 </transition>
                 <transition name="slideFade">
                   <Intro class="card intro" v-if="currentCardPosition === 0"/>
@@ -107,19 +107,25 @@ export default {
       prev: "Projects",
       cardTexts: [
         {
-          top: "Email",
-          address: "jiwonjulietyoon @gmail.com",
-          bottom: "Email"
+          label: "Email",
+          letter: "E",
+          content: "jiwonjulietyoon @gmail.com",
+          suit: "heart",
+          link: ""
         },
         {
-          top: "GitHub",
-          address: "github.com /jiwonjulietyoon",
-          bottom: "GitHub"
+          label: "GitHub",
+          letter: "G",
+          content: "github.com /jiwonjulietyoon",
+          suit: "club",
+          link: "https://www.github.com/jiwonjulietyoon"
         },
         {
-          top: "LinkedIn",
-          address: "linkedin.com/in /jiwon-yoon -155b89187",
-          bottom: "LinkedIn"
+          label: "LinkedIn",
+          letter: "L",
+          content: "linkedin.com/in /jiwon-yoon -155b89187",
+          suit: "diamond",
+          link: "https://www.linkedin.com/in/jiwon-yoon-155b89187"
         }
       ],
       currentCardPosition: 0,

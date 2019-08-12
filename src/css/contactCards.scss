@@ -53,94 +53,152 @@ $cardBg: #EAD78F;
 
 
 
+
+
+
+
 ///////////// SELECTED CARDS /////////
+
+// .selectedCard {
+//   position: relative;
+//   background: $cardBg;
+//   border-radius: 5px;
+//   overflow: hidden;
+//   & > .grungeBorder {
+//     width: 92%;
+//     height: 95%;
+//     position: absolute;
+//     @include centerItem;
+//     background: url('~@/assets/grayGrunge.png');
+//   }
+//   .top, .middle, .bottom {
+//     position: absolute;
+//     background: $cardBg;
+//     width: 94%;
+//     left: 3%;
+//     box-shadow: 0 0 4px 0 $cardBg;
+//   }
+//   .top {
+//     height: 12%;
+//     top: 2%;
+//   }
+//   .middle {
+//     height: 68%;
+//     top: 16%;
+//   }
+//   .bottom {
+//     height: 12%;
+//     bottom: 2%;
+//   }
+//   .text {
+//     @include centerItem;
+//     font-family: $fontFancy;
+//     text-transform: uppercase;
+//     letter-spacing: 4px;
+//     font-size: 1.5em;
+//     white-space: nowrap;
+//   }
+//   .text2 {
+//     @include centerItem;
+//     font-family: $fontFancy;
+//     letter-spacing: 3px;
+//     text-align: center;
+//     font-size: 1.3em;
+//     white-space: pre-wrap;
+//   }
+//   .address {
+//     height: 60%;
+//     position: relative;
+//   }
+//   .copy {
+//     height: 40%;
+//     position: relative;
+//     .icon {
+//       position: absolute;
+//       bottom: 30%;
+//       left: 50%;
+//       transform: translate(-50%);
+//       cursor: pointer;
+//       i {
+//         font-size: 2em;
+//         color: rgba(0, 0, 0, 0.6);
+//         transition: color 0.3s;
+//       }
+//       &:hover {
+//         i {color: rgba(0, 0, 0, 0.8)};
+//         .tooltip{
+//           bottom: 100%;
+//           opacity: 1;
+//         }
+//       }
+//     }
+//     .tooltip {
+//       padding: 3px 10px;
+//       font-family: $fontFancy;
+//       font-size: 0.8em;
+//       font-style: italic;
+//       letter-spacing: 2px;
+//       white-space: nowrap;
+//       position: absolute;
+//       left: 50%;
+//       transform: translate(-50%);
+//       bottom: 90%;
+//       opacity: 0;
+//       transition: all 0.5s;
+//     }
+//   }
+// }
+
+
 
 .selectedCard {
   position: relative;
   background: $cardBg;
   border-radius: 5px;
-  & > .grungeBorder {
-    width: 92%;
-    height: 95%;
-    position: absolute;
-    @include centerItem;
-    background: url('~@/assets/grayGrunge.png');
+  overflow: hidden;
+}
+.selectedCard .side {
+  width: 14%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  padding: 3% 0;
+  &.left {
+    left: 0;
   }
-  .top, .middle, .bottom {
-    position: absolute;
-    background: $cardBg;
-    width: 94%;
-    left: 3%;
-    box-shadow: 0 0 4px 0 $cardBg;
+  &.right {
+    right: 0;
+    transform: rotate(180deg);
   }
-  .top {
-    height: 12%;
-    top: 2%;
-  }
-  .middle {
-    height: 68%;
-    top: 16%;
-  }
-  .bottom {
-    height: 12%;
-    bottom: 2%;
-  }
-  .text {
-    @include centerItem;
-    font-family: $fontFancy;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 1.5em;
-    white-space: nowrap;
-  }
-  .text2 {
-    @include centerItem;
-    font-family: $fontFancy;
-    letter-spacing: 3px;
+  & > .letter {
+    width: 100%;
+    height: auto;
     text-align: center;
-    font-size: 1.3em;
-    white-space: pre-wrap;
+    font-family: $fontFancy;
+    font-size: 2.5em;
   }
-  .address {
-    height: 60%;
-    position: relative;
-  }
-  .copy {
-    height: 40%;
-    position: relative;
-    .icon {
-      position: absolute;
-      bottom: 30%;
-      left: 50%;
-      transform: translate(-50%);
-      cursor: pointer;
-      i {
-        font-size: 2em;
-        color: rgba(0, 0, 0, 0.6);
-        transition: color 0.3s;
-      }
-      &:hover {
-        i {color: rgba(0, 0, 0, 0.8)};
-        .tooltip{
-          bottom: 100%;
-          opacity: 1;
-        }
-      }
-    }
-    .tooltip {
-      padding: 3px 10px;
-      font-family: $fontFancy;
-      font-size: 0.8em;
-      font-style: italic;
-      letter-spacing: 2px;
-      white-space: nowrap;
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%);
-      bottom: 90%;
-      opacity: 0;
-      transition: all 0.5s;
-    }
+  & > .suit {
+    transform: scaleX(0.75);
   }
 }
+.selectedCard .blackBorder {
+  width: 72%;
+  height: 82%;
+  @include centerItem;
+  border: 2px solid;
+  border-radius: 2px;
+}
+.selectedCard .fadeBg {
+  width: 100%;
+  height: 100%;
+  @include centerItem;
+  background: url('~@/assets/vintageFade.png');
+  opacity: 0.35;
+}
+.selectedCard .main {
+  width: calc(72% - 4px);
+  height: calc(82% - 4px);
+  @include centerItem;
+}
+
 

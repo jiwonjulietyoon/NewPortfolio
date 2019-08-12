@@ -1,6 +1,22 @@
 <template>
   <div class="selectedCard">
-    <div class="grungeBorder">
+    <div class="side left">
+      <div class="letter">{{text.letter}}</div>
+      <img class="suit" :src="require(`@/assets/contact/suit_${text.suit}.svg`)">
+    </div>
+    <div class="side right">
+      <div class="letter">{{text.letter}}</div>
+      <img class="suit" :src="require(`@/assets/contact/suit_${text.suit}.svg`)">
+    </div>
+    <div class="blackBorder"></div>
+    <div class="fadeBg"></div>
+    <div class="main">
+
+    </div>
+
+
+
+    <!-- <div class="grungeBorder">
       <div class="top">
         <div class="text">{{text.top}}</div>
       </div>
@@ -18,7 +34,7 @@
       <div class="bottom">
         <div class="text">{{text.bottom}}</div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
