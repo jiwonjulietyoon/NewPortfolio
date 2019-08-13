@@ -9,10 +9,13 @@
       <img class="suit" src="~@/assets/contact/suit_spade.svg">
     </div>
     <div class="blackBorder"></div>
-    <div class="fadeBg"></div>
+    
     <div class="main">
-
+      <img class="suit s1" src="~@/assets/contact/suit_spade.svg">
+      <img class="suit s2" src="~@/assets/contact/suit_spade.svg">
     </div>
+
+    <div class="fadeBg"></div>
   </div>
 </template>
 

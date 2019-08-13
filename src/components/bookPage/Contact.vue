@@ -111,21 +111,27 @@ export default {
           letter: "E",
           content: "jiwonjulietyoon @gmail.com",
           suit: "heart",
-          link: ""
+          link: "",
+          red: true,
+          spacing: false
         },
         {
           label: "GitHub",
           letter: "G",
           content: "github.com /jiwonjulietyoon",
           suit: "club",
-          link: "https://www.github.com/jiwonjulietyoon"
+          link: "https://www.github.com/jiwonjulietyoon",
+          red: false,
+          spacing: false
         },
         {
           label: "LinkedIn",
           letter: "L",
           content: "linkedin.com/in /jiwon-yoon -155b89187",
           suit: "diamond",
-          link: "https://www.linkedin.com/in/jiwon-yoon-155b89187"
+          link: "https://www.linkedin.com/in/jiwon-yoon-155b89187",
+          red: true,
+          spacing: false
         }
       ],
       currentCardPosition: 0,
