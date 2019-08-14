@@ -23,9 +23,9 @@
       <div class="Content" id="address">{{text.content}}</div>
       <div class="btnBox">
         <div class="copy" v-if="!text.link">
-          <div class="icon" @click="copyText" @mouseout="tooltipReset">
-            <i class="material-icons-round">flag</i>
-            <span class="tooltip" id="tooltip">Click to copy</span>
+          <div class="icon">
+            <i class="material-icons-round" @click="copyText" @mouseover="hoverOnCopy = true" @mouseout="hoverOnCopy = false">flag</i>
+            <span class="tooltip" id="tooltip" :class="{'visible': hoverOnCopy}">Click to copy</span>
           </div>
         </div>
         <div class="visit" v-if="text.link">
@@ -44,6 +44,7 @@
 </template>
 
 <script>
+import { setTimeout } from 'timers';
 export default {
   name: 'Card',
   props: {
@@ -51,7 +52,15 @@ export default {
   },
   data() {
     return {
+      hoverOnCopy: false,
       hoverOnVisit: false
+    }
+  },
+  watch: {
+    hoverOnCopy() {
+      if (!this.hoverOnCopy) {
+        this.tooltipReset();
+      }
     }
   },
   methods: {
@@ -67,7 +76,9 @@ export default {
     },
     tooltipReset() {
       const tooltip = document.getElementById("tooltip");
-      tooltip.innerHTML = "Click to copy";
+      setTimeout(function() {
+        tooltip.innerHTML = "Click to copy";
+      }, 500);
     }
   }
 }

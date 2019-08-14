@@ -195,6 +195,9 @@ export default {
   @include maxWidth(1264) {
     max-width: 960px;
   }
+  @include minWidth(601) {
+    min-height: 316px;
+  }
 }
 .cardPreview, .selectedCard {
   // border: 1px solid red;
