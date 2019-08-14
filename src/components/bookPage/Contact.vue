@@ -4,7 +4,7 @@
       <h2 class="pageHeader">Contact</h2>
 
         <v-container class="vContainer">
-          <v-layout row wrap>
+          <v-layout row wrap class="vRow">
             <!-- CARD PREVIEW -->
             <v-flex
               xs12 sm5
@@ -199,9 +199,16 @@ export default {
     min-height: 316px;
   }
 }
+.vRow {
+  height: 100%;
+  @include minWidth(601) {
+    min-height: 316px;
+  }
+}
 .cardPreview, .selectedCard {
   // border: 1px solid red;
   @include minWidth(601) {
+    height: 100%;
     min-height: calc(94vh - 260px);
   }
 }
