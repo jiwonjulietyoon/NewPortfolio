@@ -3,6 +3,12 @@
     <div class="pageContainer">
       <h2 class="pageHeader">Contact</h2>
 
+        <div class="pageContent">
+
+        </div>
+
+
+
         <v-container class="vContainer">
           <v-layout row wrap class="vRow">
             <!-- CARD PREVIEW -->
@@ -184,6 +190,22 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/css/style.scss";
+
+////////// CARD LAYOUT W/O VUETIFY ///////
+
+.pageContent {
+  height: calc(94vh - 260px);
+  @include maxWidth(767) {height: calc(94vh - 230px);}
+  @include smDown {height: calc(94vh - 220px);}
+
+
+
+  // @include minWidth(601) { // DESKTOP
+  //   min-height: 316px;
+  // }
+}
+
+
 
 
 ///////////// CARD LAYOUT /////////////
