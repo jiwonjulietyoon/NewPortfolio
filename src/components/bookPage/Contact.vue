@@ -4,82 +4,69 @@
       <h2 class="pageHeader">Contact</h2>
 
         <div class="pageContent">
+          
+          <!-- CARD PREVIEW -->
+          <div class="column cardPreview">
+            <div class="content">
+              <div class="diamond" :class="{'bobbing': hoverOnCards}">
+                <div class="trapezoid">
+                  <div class="triUp"></div>
+                </div>
+                <div class="triDown">
+                  <div class="triDown"></div>
+                </div>
+              </div>
+              <div 
+                class="cards" 
+                :style="cardsRotateStyle"
+                @mouseenter="hoverOnCards = true"
+                @mouseleave="hoverOnCards = false"
+              >
+                <div class="cardsContainer">
+                  <div class="card intro" @click="rotateCards(0)">
+                    <div class="outer">
+                      <IntroPreview class="inner" :style="cardRotateStyle" />
+                    </div>
+                  </div>
+                  <div class="card email" @click="rotateCards(1)">
+                    <div class="outer">
+                      <EmailPreview class="inner" :style="cardRotateStyle" /> 
+                    </div>
+                  </div>
+                  <div class="card git" @click="rotateCards(2)">
+                    <div class="outer">
+                      <GitPreview class="inner" :style="cardRotateStyle" />
+                    </div>
+                  </div>
+                  <div class="card linkedin" @click="rotateCards(3)">
+                    <div class="outer">
+                      <LinkedinPreview class="inner" :style="cardRotateStyle" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SELECTED CARD -->
+          <div class="column selectedCard">
+            <div class="outer">
+              <transition name="slideFade">
+                <Card :text="cardTexts[2]" class="card" v-if="currentCardPosition === 3" />
+              </transition>
+              <transition name="slideFade">
+                <Card :text="cardTexts[1]" class="card" v-if="currentCardPosition === 2" />
+              </transition>
+              <transition name="slideFade">
+                <Card :text="cardTexts[0]" class="card" v-if="currentCardPosition === 1" />
+              </transition>
+              <transition name="slideFade">
+                <Intro class="card intro" v-if="currentCardPosition === 0"/>
+              </transition>
+            </div>
+          </div>
 
         </div>
-
-
-
-        <v-container class="vContainer">
-          <v-layout row wrap class="vRow">
-            <!-- CARD PREVIEW -->
-            <v-flex
-              xs12 sm5
-              class="cardPreview"
-            >
-              <div class="content">
-                <div class="diamond" :class="{'bobbing': hoverOnCards}">
-                  <div class="trapezoid">
-                    <div class="triUp"></div>
-                  </div>
-                  <div class="triDown">
-                    <div class="triDown"></div>
-                  </div>
-                </div>
-                <div 
-                  class="cards" 
-                  :style="cardsRotateStyle"
-                  @mouseenter="hoverOnCards = true"
-                  @mouseleave="hoverOnCards = false"
-                >
-                  <div class="cardsContainer">
-                    <div class="card intro" @click="rotateCards(0)">
-                      <div class="outer">
-                        <IntroPreview class="inner" :style="cardRotateStyle" />
-                      </div>
-                    </div>
-                    <div class="card email" @click="rotateCards(1)">
-                      <div class="outer">
-                        <EmailPreview class="inner" :style="cardRotateStyle" /> 
-                      </div>
-                    </div>
-                    <div class="card git" @click="rotateCards(2)">
-                      <div class="outer">
-                        <GitPreview class="inner" :style="cardRotateStyle" />
-                      </div>
-                    </div>
-                    <div class="card linkedin" @click="rotateCards(3)">
-                      <div class="outer">
-                        <LinkedinPreview class="inner" :style="cardRotateStyle" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </v-flex>
-
-            <!-- SELECTED CARD -->
-            <v-flex
-              xs12 sm7
-              class="selectedCard"
-            >
-              <div class="outer">
-                <transition name="slideFade">
-                  <Card :text="cardTexts[2]" class="card" v-if="currentCardPosition === 3" />
-                </transition>
-                <transition name="slideFade">
-                  <Card :text="cardTexts[1]" class="card" v-if="currentCardPosition === 2" />
-                </transition>
-                <transition name="slideFade">
-                  <Card :text="cardTexts[0]" class="card" v-if="currentCardPosition === 1" />
-                </transition>
-                <transition name="slideFade">
-                  <Intro class="card intro" v-if="currentCardPosition === 0"/>
-                </transition>
-              </div>
-            </v-flex>
-          </v-layout>
-        </v-container>
-
     </div>
     <NavArrows :prevLabel="prev" :prevName="prev" :nextActive="false" />
   </section>
@@ -194,56 +181,37 @@ export default {
 ////////// CARD LAYOUT W/O VUETIFY ///////
 
 .pageContent {
+  border: 1px solid blue;
+}
+
+.column {
+  border: 1px solid red;
+  // DESKTOP, 2 COLUMNS
+  width: 50%;
+  display: inline-block;
+  min-height: 316px;
   height: calc(94vh - 260px);
   @include maxWidth(767) {height: calc(94vh - 230px);}
-  @include smDown {height: calc(94vh - 220px);}
-
-
-
-  // @include minWidth(601) { // DESKTOP
-  //   min-height: 316px;
-  // }
-}
-
-
-
-
-///////////// CARD LAYOUT /////////////
-
-.vContainer {
-  padding-top: 0;
-  margin: 0 auto;
-  max-width: 1264px;
-  @include maxWidth(1264) {
-    max-width: 960px;
-  }
-  @include minWidth(601) {
-    min-height: 316px;
-  }
-}
-.vRow {
-  height: 100%;
-  @include minWidth(601) {
-    min-height: 316px;
-  }
-}
-.cardPreview, .selectedCard {
-  // border: 1px solid red;
-  @include minWidth(601) {
-    height: 100%;
-    min-height: calc(94vh - 260px);
+  // MOBILE, 1 COLUMN STACKED
+  @include maxWidth(600) {
+    width: 100%;
+    &.cardPreview {
+      height: 20vh;
+      min-height: 100px;
+    }
+    &.selectedCard {
+      height: calc(74vh - 260px);
+    }
   }
 }
 .cardPreview {
-  @include maxWidth(600) {
-    min-height: 150px;
-  }
   position: relative;
-  & > .content {
-    @include centerItem;
-    // border: 1px solid cyan;
+  & > .content {@include centerItem;}
+  @include maxWidth(600) {
+    .diamond {display: none;}
   }
 }
+
 
 ////////////// DIAMOND ///////////////
 
@@ -251,12 +219,6 @@ export default {
   margin: 0 auto;
   width: 60px; height: 60px;
   transition: all 0.5s;
-  // border: 1px solid olive;
-  @include maxWidth(600) {
-    width: 40px; height: 40px;
-    display: inline-block;
-    transform: rotate(-90deg);
-  }
   & > .trapezoid {
     // base <= width
     // height <= border-bottom
@@ -266,12 +228,6 @@ export default {
     border-bottom: 15px solid #00a2ff;
     border-left: 14px solid transparent;
     border-right: 14px solid transparent;
-    @include maxWidth(600) {
-      width: 40px;
-      border-bottom-width: 10px;
-      border-left-width: 10px;
-      border-right-width: 10px;
-    }
     margin: 0 auto;
     position: relative;
     & > .triUp {
@@ -280,11 +236,6 @@ export default {
       border-left: 17px solid transparent;
       border-right: 17px solid transparent;
       border-bottom: 15px solid #00C0FF;
-      @include maxWidth(600) {
-        border-left-width: 12px;
-        border-right-width: 12px;
-        border-bottom-width: 10px;
-      }
       position: absolute;
       left: 50%;
       transform: translate(-50%);
@@ -298,11 +249,6 @@ export default {
     border-left: 30px solid transparent;
     border-right: 30px solid transparent;
     border-top: 40px solid #00C0FF;
-    @include maxWidth(600) {
-      border-left-width: 20px;
-      border-right-width: 20px;
-      border-top-width: 27px;
-    }
     margin: 0 auto;
     position: relative;
     & > .triDown {
@@ -311,11 +257,6 @@ export default {
       border-left: 17px solid transparent;
       border-right: 17px solid transparent;
       border-top: 40px solid #00A2FF;
-      @include maxWidth(600) {
-        border-left-width: 12px;
-        border-right-width: 12px;
-        border-top-width: 27px;
-      }
       position: absolute;
       left: 50%;
       bottom: 100%;
@@ -323,10 +264,7 @@ export default {
     }
   }
 }
-
-.diamond.bobbing {
-  animation: bobbing 0.8s ease-out infinite alternate;
-}
+.diamond.bobbing {animation: bobbing 0.8s ease-out infinite alternate;}
 @keyframes bobbing {
   0% {transform: translateY(0);}
   100% {transform: translateY(5px);}
@@ -337,10 +275,12 @@ export default {
 
 .cardPreview .cards {
   margin-top: 20px;
+  @include maxWidth(600) {
+    margin-top: 0;
+  }
   // border: 1px solid hotpink;
   border-radius: 50%;
   position: relative;
-  // transition: all 0.5s;
   &:hover {
     .cardsContainer {transform: scale(1.02);}
     .inner {box-shadow: 0px 0px 7px 0px #BBBBBB;}
@@ -392,7 +332,7 @@ export default {
 
 .selectedCard {
   @include maxWidth(600) {
-    min-height: 200px;
+    // min-height: 200px;
   }
   position: relative;
   .outer {
@@ -419,8 +359,6 @@ export default {
   transform: translateX(20%);
   opacity: 0;
 }
-
-
 
 
 </style>

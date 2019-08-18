@@ -32,13 +32,19 @@ export default {
       let content = $('.cardPreview > .content');
       let cards = $('.cardPreview > .content > .cards');
       let W; let H;
-      if ((w + 80) >= h) {
-        W = h - 80;
-        H = h;
+      if ($(window).width() > 600) {
+        if ((w + 80) >= h) {
+          W = h - 80;
+          H = h;
+        }
+        else {
+          W = w;
+          H = w + 80;
+        }
       }
       else {
-        W = w;
-        H = w + 80;
+        W = w <= h ? w : h;
+        H = W
       }
       content.css({
         'width': W,
@@ -47,7 +53,7 @@ export default {
       cards.css({
         'width': W,
         'height': W
-      })
+      });
     }
     setSize();
     $(window).resize(function() {
