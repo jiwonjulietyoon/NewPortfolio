@@ -16,6 +16,7 @@
                   <div class="triDown"></div>
                 </div>
               </div>
+              <div class="diamondSm"><div></div></div>
               <div 
                 class="cards" 
                 :style="cardsRotateStyle"
@@ -181,11 +182,11 @@ export default {
 ////////// CARD LAYOUT W/O VUETIFY ///////
 
 .pageContent {
-  border: 1px solid blue;
+  // border: 1px solid blue;
 }
 
 .column {
-  border: 1px solid red;
+  // border: 1px solid red;
   // DESKTOP, 2 COLUMNS
   width: 50%;
   display: inline-block;
@@ -269,6 +270,30 @@ export default {
   0% {transform: translateY(0);}
   100% {transform: translateY(5px);}
 }
+.diamondSm {
+  @include minWidth(601) {display: none;}
+  position: absolute;
+  bottom: calc(100% + 15px);
+  left: 50%;
+  transform: translate(-50%);
+  & > div {
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-bottom: 7px solid #00A2FF;
+    position: relative;
+    &::after {
+      position: absolute;
+      top: 7px;
+      left: -5px;
+      width: 0;
+      height: 0;
+      border: 5px solid transparent;
+      border-top: 7px solid #00A2FF;
+    }
+  }
+}
+
 
 
 ////////////// PREVIEW CARDS ///////////////  
