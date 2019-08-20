@@ -16,7 +16,7 @@
                   <div class="triDown"></div>
                 </div>
               </div>
-              <div class="diamondSm"><div></div></div>
+              <div class="diamondSm" :class="{'pulse': hoverOnCards}"><div></div></div>
               <div 
                 class="cards" 
                 :style="cardsRotateStyle"
@@ -276,6 +276,7 @@ export default {
   bottom: calc(100% + 15px);
   left: 50%;
   transform: translate(-50%);
+  transform-origin: 0 100%;
   & > div {
     width: 0;
     height: 0;
@@ -293,7 +294,11 @@ export default {
     }
   }
 }
-
+.diamondSm.pulse {animation: pulse 0.5s ease-in infinite alternate;}
+@keyframes pulse {
+  0% {transform: scale(1) translate(-50%);}
+  100% {transform: scale(1.2) translate(-50%);}
+}
 
 
 ////////////// PREVIEW CARDS ///////////////  
