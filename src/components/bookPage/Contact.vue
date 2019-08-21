@@ -26,22 +26,22 @@
                 <div class="cardsContainer">
                   <div class="card intro" @click="rotateCards(0)">
                     <div class="outer">
-                      <IntroPreview class="inner" :style="cardRotateStyle" />
+                      <CardPreview :info="previewCards[0]" class="inner" :style="cardRotateStyle" />
                     </div>
                   </div>
                   <div class="card email" @click="rotateCards(1)">
                     <div class="outer">
-                      <EmailPreview class="inner" :style="cardRotateStyle" /> 
+                      <CardPreview :info="previewCards[1]" class="inner" :style="cardRotateStyle" />
                     </div>
                   </div>
                   <div class="card git" @click="rotateCards(2)">
                     <div class="outer">
-                      <GitPreview class="inner" :style="cardRotateStyle" />
+                      <CardPreview :info="previewCards[2]" class="inner" :style="cardRotateStyle" />
                     </div>
                   </div>
                   <div class="card linkedin" @click="rotateCards(3)">
                     <div class="outer">
-                      <LinkedinPreview class="inner" :style="cardRotateStyle" />
+                      <CardPreview :info="previewCards[3]" class="inner" :style="cardRotateStyle" />
                     </div>
                   </div>
                 </div>
@@ -77,11 +77,8 @@
 <script>
 import NavArrows from '@/components/NavArrows';
 import Intro from '@/components/bookPage/contactCards/Intro';
-import IntroPreview from '@/components/bookPage/contactCards/IntroPreview';
-import EmailPreview from '@/components/bookPage/contactCards/EmailPreview';
-import GitPreview from '@/components/bookPage/contactCards/GitPreview';
-import LinkedinPreview from '@/components/bookPage/contactCards/LinkedinPreview';
 import Card from '@/components/bookPage/contactCards/Card';
+import CardPreview from '@/components/bookPage/contactCards/CardPreview';
 
 import contactCards from '@/js/contactCards.js';
 
@@ -90,11 +87,8 @@ export default {
   components: {
     NavArrows,
     Intro,
-    IntroPreview,
-    EmailPreview,
-    GitPreview,
-    LinkedinPreview,
-    Card
+    Card,
+    CardPreview
   },
   data() {
     return {
@@ -126,6 +120,28 @@ export default {
           link: "https://www.linkedin.com/in/jiwon-yoon-155b89187",
           red: true,
           spacing: false
+        }
+      ],
+      previewCards: [
+        {
+          letter: "J",
+          suit: "spade",
+          red: false
+        },
+        {
+          letter: "E",
+          suit: "heart",
+          red: true
+        },
+        {
+          letter: "G",
+          suit: "club",
+          red: false
+        },
+        {
+          letter: "L",
+          suit: "diamond",
+          red: true
         }
       ],
       currentCardPosition: 0,
