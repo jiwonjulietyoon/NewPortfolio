@@ -14,7 +14,13 @@
                 <div></div>
               </div>
               <div class="hornLeft"></div>
-              <div class="text">HTML</div>
+              <div class="content">
+                <div class="text">Vue.js</div>
+                <div class="badge">
+                  <img :src="require('@/assets/badge-with-a-star.svg')" alt="">
+                  <img :src="require('@/assets/badge-with-a-star.svg')" alt="">
+                </div>
+              </div>
             </div>
           </div>
           <div class="right">
@@ -27,7 +33,12 @@
                 <div></div>
               </div>
               <div class="hornRight"></div>
-              <div class="text">JavaScript</div>
+              <div class="content">
+                <div class="text">Python</div>
+                <div class="badge">
+                  <img :src="require('@/assets/badge-with-a-star.svg')" alt="">
+                </div>
+              </div>
             </div>
           </div>
           <div class="center">
@@ -40,7 +51,14 @@
               <div class="top"></div>
               <div class="top"></div>
               <div class="top"></div>
-              <div class="text">CSS</div>
+              <div class="content">
+                <div class="text">HTML <br>&amp; CSS</div>
+                <div class="badge">
+                  <img :src="require('@/assets/badge-with-a-star.svg')" alt="">
+                  <img :src="require('@/assets/badge-with-a-star.svg')" alt="">
+                  <img :src="require('@/assets/badge-with-a-star.svg')" alt="">
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -162,12 +180,29 @@ export default {
       &:nth-of-type(3) {right: 40px;}
       &:nth-of-type(4) {right: 0;}
     }
-    & > .text {
+    & > .content {
       width: 100%; height: 100%;
-      line-height: 150px;
-      text-align: center;
-      font-family: $fontFancy;
-      font-size: 1.5em;
+      position: relative;
+      & > .text {
+        width: 100%;
+        position: absolute;
+        top: 13%;
+        font-family: $fontFancy;
+        text-align: center;
+        font-size: 1.5em;
+      }
+      & > .badge {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        bottom: 10%;
+        display: flex;
+        justify-content: center;
+        & > img {
+          width: 30px;
+          margin: 0 3px;
+        }
+      }
     }
   }
 }
@@ -228,14 +263,31 @@ export default {
       &:nth-of-type(4) {right: 0px;}
     }
   }
-  & > .text {
+  & > .content {
     width: 100%;
     height: 90px;
-    line-height: 90px;
-    text-align: center;
+    position: relative;
     top: 30px; left: 0;
-    font-family: $fontFancy;
-    font-size: 1.5em;
+    & > .text {
+      width: 100%;
+      position: absolute;
+      top: 15%;
+      text-align: center;
+      font-family: $fontFancy;
+      font-size: 1.4em;
+    }
+    & > .badge {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      bottom: 5%;
+      display: flex;
+      justify-content: center;
+      & > img {
+        width: 30px;
+        margin: 0 3px;
+      }
+    }
   }
 }
 .hornLeft {
