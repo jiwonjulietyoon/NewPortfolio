@@ -63,14 +63,14 @@
           </div>
         </div>
         <div class="others">
-          <div class="roll">
+          <div class="roll rleft">
             <div class="top"></div>
             <div class="bot"></div>
           </div>
           <div class="main">
             Python, Django, Vue.js, Bootstrap, JQuery, SQLite, Linux
           </div>
-          <div class="roll">
+          <div class="roll rright">
             <div class="top"></div>
             <div class="bot"></div>
           </div>
@@ -343,37 +343,36 @@ export default {
 /* * * * * * * * * * * * * * * * * * * * * * * * * */
 
 .others {
-  width: 80%;
-  height: 140px;
-  margin: 20px auto;
-  @include xsDown {
-    width: 90%;
-  }
-  & > div {float: left;}
+  width: 60%;
+  @include xsDown {width: 70%;}
+  height: auto;
+  margin: 40px auto;
+  position: relative;
   & > .main {
-    width: calc(100% - 60px);
-    // height: auto;
-    // min-height: 100px;
-    height: 100px;
+    width: 100%;
+    height: auto;
     background-color: $bannerLt;
-    padding: 10px 20px;
-    position: relative;
-    top: 10px;
-    font-family: 'Berkshire Swash', cursive;
-    font-size: 1.3em;
-    letter-spacing: 1px;
-    font-style: italic;
+    font-family: $fontFancy;
+    font-size: 1.2em;
+    padding: 15px 20px;
   }
   & > .roll {
     width: 30px;
-    height: 120px;
+    height: calc(100% + 20px);
     background-color: $bannerMd;
-    position: relative;
     border-radius: 2px;
+    position: absolute;
+    top: -10px;
+    &.rleft {
+      left: -30px;
+    }
+    &.rright {
+      right: -30px;
+    }
     & > .top, & > .bot {
-      position: absolute;
       width: 20px;
       height: 7px;
+      position: absolute;
       background-color: $bannerDk;
       left: 5px;
     }
@@ -395,6 +394,7 @@ export default {
     }
   }
 }
+
 
 #confetti {
   width: calc(100% - 24px); height: calc(100% - 24px);
