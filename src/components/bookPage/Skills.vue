@@ -68,7 +68,38 @@
             <div class="bot"></div>
           </div>
           <div class="main">
-            Python, Django, Vue.js, Bootstrap, JQuery, SQLite, Linux
+            <div class="Row">
+              <div class="Col">
+                <p>Front-end Web</p>
+                <ul>
+                  <li>HTML, CSS, JavaScript</li>
+                  <li>SASS, Vue.js, JQuery, Bootstrap</li>
+                </ul>
+              </div>
+              <div class="Col">
+                <p>Back-end Web</p>
+                <ul>
+                  <li>Python, Django, Flask</li>
+                  <li>Node.js, SQLite, Linux</li>
+                </ul>
+              </div>
+            </div>
+            <div class="Row">
+              <div class="Col">
+                <p>Languages</p>
+                <ul>
+                  <li>Bilingual: Korean, English</li>
+                  <li>Basic: Chinese, German</li>
+                </ul>
+              </div>
+              <div class="Col">
+                <p>Soft Skills</p>
+                <ul>
+                  <li>Approachable: enthusiastic chatter</li>
+                  <li>Adaptable: open to new ideas</li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div class="roll rright">
             <div class="top"></div>
@@ -343,7 +374,7 @@ export default {
 /* * * * * * * * * * * * * * * * * * * * * * * * * */
 
 .others {
-  width: 60%;
+  width: 75%;
   @include xsDown {width: 70%;}
   height: auto;
   margin: 40px auto;
@@ -353,8 +384,40 @@ export default {
     height: auto;
     background-color: $bannerLt;
     font-family: $fontFancy;
-    font-size: 1.2em;
-    padding: 15px 20px;
+    padding: 25px 20px 0px;
+    & > .Row {
+      width: 100%;
+      height: auto;
+      & > .Col {
+        width: 50%;
+        @include smDown {width: 100%;}
+        height: auto;
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 15px;
+        margin-bottom: 30px;
+        & > p {
+          margin-bottom: 5px;
+          font-size: 1.3em;
+        }
+        & > ul {
+          padding-left: 20px;
+          & > li {
+            font-size: 1em;
+            &::before {
+              content: "-";
+              position: relative;
+              left: -10px;
+            }
+          }
+        }
+      }
+    }
+
+
+
+    
+    
   }
   & > .roll {
     width: 30px;
