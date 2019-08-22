@@ -70,7 +70,7 @@ export default {
           preview: "5 Words",
           html: "<div class='wordBox sword'><div class='pentagon'><div class='recHor'></div><div class='recVer'></div></div></div>",
           word: "5 Words that Describe Me",
-          blurb: "Honest. Precise. Approachable. Practical. Systematic.",
+          blurb: "APPROACHABLE: Compassionate listener & enthusiastic chatter\nDEDICATED: See through completion. Done is better than perfect!\nHONEST: Direct and straightforward\nPRECISE: Detail-oriented and systematic\nADAPTABLE: Ready to take on new challenges",
           current: false
         },
         {
@@ -142,22 +142,23 @@ export default {
   }
 }
 h3.aboutmeWord {
-    padding: 0;
-    font-family: $fontContent;
-    font-size: 1.8em;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
+  padding: 0;
+  font-family: $fontContent;
+  font-size: 1.8em;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
 }
 h3.aboutmeWord span:first-child {
-    font-family: $fontFancy;
-    font-size: 2.2em;
-    font-weight: normal;
-    margin: 0 8px;
+  font-family: $fontFancy;
+  font-size: 2.2em;
+  font-weight: normal;
+  margin: 0 8px;
 }
 p.aboutmeBlurb {
-    padding: 0 3%;
-    font-family: $fontContent;
-    line-height: 2.5;
+  padding: 0 3%;
+  font-family: $fontContent;
+  line-height: 2.5;
+  white-space: pre-wrap;
 }
 </style>
 
