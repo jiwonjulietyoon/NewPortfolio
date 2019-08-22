@@ -59,30 +59,6 @@ export default {
           more: 'https://drive.google.com/drive/folders/1nF4oy4G7vFhJsOuhYuLx8J7F-98qmicc?usp=sharing',
           git: 'https://github.com/ChangmoKang/PJT'
         },
-        {
-          id: 2,
-          title: 'Sample 2',
-          info: 'Then this will state that the font-size of the element should always be 100% of the height of the viewport at all times (50vh would be 50%, 15vh would be 15% and so on).',
-          img: "prj1_overview.png",
-          more: 'https://drive.google.com/drive/folders/1nF4oy4G7vFhJsOuhYuLx8J7F-98qmicc?usp=sharing',
-          git: 'https://github.com/ChangmoKang/PJT'
-        },
-        {
-          id: 3,
-          title: 'Sample 3',
-          info: 'In the demo below try resizing the height of the example to watch the type stretch:',
-          img: "prj1_overview.png",
-          more: 'https://drive.google.com/drive/folders/1nF4oy4G7vFhJsOuhYuLx8J7F-98qmicc?usp=sharing',
-          git: 'https://github.com/ChangmoKang/PJT'
-        },
-        {
-          id: 4,
-          title: 'Sample 4',
-          info: 'In the demo below try resizing the height of the example to watch the type stretch:',
-          img: "prj1_overview.png",
-          more: 'https://drive.google.com/drive/folders/1nF4oy4G7vFhJsOuhYuLx8J7F-98qmicc?usp=sharing',
-          git: 'https://github.com/ChangmoKang/PJT'
-        }
       ]
     }
   }
